@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <title>Ціни</title>
+    <link href="/assets/css/style.css" rel="stylesheet" />
+    <!-- Подключаем jQuery из CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-menu lev-font-color">
+            <div class="container">
+                <nav class="header-menu__container">
+                    <div class="header-logo">
+                        <a class="header-logo__link" href="/index.html">
+                            <img src="/assets/images/icon-round.webp" alt="" />
+                        </a>
+                    </div>
+                    <div class="header-navbar">
+                        <div class="header-navbar__btn">
+                            <span class="header-navbar__btn-row"></span>
+                            <span class="header-navbar__btn-row"></span>
+                            <span class="header-navbar__btn-row"></span>
+                        </div>
+                        <ul class="header-navbar__list">
+                            <li class="nav-item">
+                                <a class="nav-link main" href="/index.html">Головна</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link serve" href="/assets/pages/serve.html">Послуги</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link price active" href="/assets/pages/price.html">Ціни</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link contact" href="/assets/pages/contact.html">Контакти</a>
+                            </li>
+                        </ul>
+                        <a class="header-navbar__contacts" href="tel:+380986073304">
+                            <span>Ми на зв'язку</span>
+                            <span>+38 (098) 607-33-04</span>
+                            <small>Пн.-Пт. з 09:00 до 18:00</small>
+                        </a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main role="main">
+        <div class="breadcrumbs" id="breadcrumbs">
+            <ul class="breadcrumb">
+                <ul class="breadcrumb container"><i class="ace-icon fa fa-home home-icon"></i>
+                    <li><a href="/">Головна</a></li>
+                    <li class="active">Price</li>
+                </ul>
+            </ul>
+        </div>
+        <div class="container">
+            <section class="padd">
+                <a class="price-card bg-calc" href="#group_1-2">
+                    Для ФО-П на єдиному податку 1-2 група
+                    <span>1</span>
+                </a>
+                <a class="price-card bg-calc" href="#group_3">
+                    Для ФО-П на єдиному податку 3 група
+                    <span>2</span>
+                </a>
+                <a class="price-card bg-calc" href="#without_tax">
+                    Для юридичних осіб на єдиному податку без ПДВ
+                    <span>3</span>
+                </a>
+                <a class="price-card bg-calc" href="#with_tax">
+                    Для юридичних осіб на загальній системі оподпткування з ПДВ
+                    <span>4</span>
+                </a>
+                <a class="price-card bg-calc" href="#other_services">
+                    Інші послуги
+                    <span>5</span>
+                </a>
+
+            </section>
+            <section class="price-section">
+                <section class="price-category bg-hand" id="group_1-2">
+                    <span>1</span>
+                    <h2 class="price-category__name">Для ФО-П на єдиному податку 1-2 група</h2>
+                    <article class="price-item">
+                        <h3 class="price-item__name">Пакет мінімальний</h3>
+                        <ul class="price-item__check">
+                            <li><i class="fa-solid fa-check"></i>щомісячний контроль сплати податків</li>
+                            <li><i class="fa-solid fa-check"></i>заповнення книги обліку доходів</li>
+                            <li><i class="fa-solid fa-check"></i>подача щорічної звітності</li>
+                            <li><i class="fa-solid fa-check"></i>консультування</li>
+                        </ul>
+                        <p class="cost">від 500 грн</p>
+                    </article>
+                    <article class="price-item">
+                        <h3 class="price-item__name">Пакет стандарт</h3>
+                        <ul class="price-item__check">
+                            <li><i class="fa-solid fa-check"></i>щомісячний контроль сплати податків</li>
+                            <li><i class="fa-solid fa-check"></i>заповнення книги обліку доходів</li>
+                            <li><i class="fa-solid fa-check"></i>подача щорічної звітності</li>
+                            <li><i class="fa-solid fa-check"></i>підготовка та щоквартальна здача 4ДФ</li>
+                            <li><i class="fa-solid fa-check"></i>консультування</li>
+                        </ul>
+                        <p class="cost">900-1200 грн</p>
+                    </article>
+                    <article class="price-item">
+                        <h3 class="price-item__name">Пакет максимальний_1</h3>
+                        <ul class="price-item__check">
+                            <li><i class="fa-solid fa-check"></i>щомісячний контроль сплати податків</li>
+                            <li><i class="fa-solid fa-check"></i>заповнення книги обліку доходів</li>
+                            <li><i class="fa-solid fa-check"></i>подача щорічної звітності</li>
+                            <li><i class="fa-solid fa-check"></i>підготовка та щоквартальна здача 4ДФ</li>
+                            <li><i class="fa-solid fa-check"></i>1 найманий працівник (первинні документи, податки та
+                                звітність)</li>
+                            <li><i class="fa-solid fa-check"></i>консультування</li>
+                        </ul>
+                        <p class="cost">1800-2200 грн</p>
+                    </article>
+                    <article class="price-item">
+                        <h3 class="price-item__name">Пакет максимальний_2</h3>
+                        <ul class="price-item__check">
+                            <li><i class="fa-solid fa-check"></i>щомісячний контроль сплати податків</li>
+                            <li><i class="fa-solid fa-check"></i>заповнення книги обліку доходів</li>
+                            <li><i class="fa-solid fa-check"></i>подача щорічної звітності</li>
+                            <li><i class="fa-solid fa-check"></i>підготовка та щоквартальна здача 4ДФ</li>
+                            <li><i class="fa-solid fa-check"></i>2-4 найманий працівник (первинні документи, податки та
+                                звітність)</li>
+                            <li><i class="fa-solid fa-check"></i>консультування</li>
+                        </ul>
+                        <p class="cost">2000-2600 грн</p>
+                    </article>
+                    <article class="price-item">
+                        <h3 class="price-item__name">Пакет максимальний_3</h3>
+                        <ul class="price-item__check">
+                            <li><i class="fa-solid fa-check"></i>щомісячний контроль сплати податків</li>
+                            <li><i class="fa-solid fa-check"></i>заповнення книги обліку доходів</li>
+                            <li><i class="fa-solid fa-check"></i>подача щорічної звітності</li>
+                            <li><i class="fa-solid fa-check"></i>підготовка та щоквартальна здача 4ДФ</li>
+                            <li><i class="fa-solid fa-check"></i>5-8 найманий працівник (первинні документи, податки та
+                                звітність)</li>
+                            <li><i class="fa-solid fa-check"></i>консультування</li>
+                        </ul>
+                        <p class="cost">2400-3400 грн</p>
+                    </article>
+                </section>
+
+                <section class="price-category bg-hand" id="group_3">
+                    <span>2</span>
+                    <h2 class="price-category__name">Для ФО-П на єдиному податку 3 група</h2>
+                    <article class="price-item">
+                        <h3 class="price-item__name">Пакет стандарт</h3>
+                        <ul class="price-item__check">
+                            <li><i class="fa-solid fa-check"></i>щомісячний контроль сплати податків</li>
+                            <li><i class="fa-solid fa-check"></i>заповнення книги обліку доходів</li>
+                            <li><i class="fa-solid fa-check"></i>підготовка та щоквартальна подача звітності</li>
+                            <li><i class="fa-solid fa-check"></i>консультування</li>
+                        </ul>
+                        <p class="cost">1100-1500 грн</p>
+                    </article>
+                    <article class="price-item">
+                        <h3 class="price-item__name">Пакет максимальний_1</h3>
+                        <ul class="price-item__check">
+                            <li><i class="fa-solid fa-check"></i>щомісячний контроль сплати податків</li>
+                            <li><i class="fa-solid fa-check"></i>заповнення книги обліку доходів</li>
+                            <li><i class="fa-solid fa-check"></i>подача щоквартальної звітності</li>
+                            <li><i class="fa-solid fa-check"></i>підготовка та щоквартальна здача 4ДФ</li>
+                            <li><i class="fa-solid fa-check"></i>1 найманий працівник (первинні документи, податки та
+                                звітність)</li>
+                            <li><i class="fa-solid fa-check"></i>консультування</li>
+                        </ul>
+                        <p class="cost">1800-2200 грн</p>
+                    </article>
+                    <article class="price-item">
+                        <h3 class="price-item__name">Пакет максимальний_2</h3>
+                        <ul class="price-item__check">
+                            <li><i class="fa-solid fa-check"></i>щомісячний контроль сплати податків</li>
+                            <li><i class="fa-solid fa-check"></i>заповнення книги обліку доходів</li>
+                            <li><i class="fa-solid fa-check"></i>підготовка та щоквартальна подача звітності</li>
+                            <li><i class="fa-solid fa-check"></i>2-4 найманий працівник (первинні документи, податки та
+                                звітність)</li>
+                            <li><i class="fa-solid fa-check"></i>консультування</li>
+                        </ul>
+                        <p class="cost">2300-2700 грн</p>
+                    </article>
+                    <article class="price-item">
+                        <h3 class="price-item__name">Пакет максимальний_3</h3>
+                        <ul class="price-item__check">
+                            <li><i class="fa-solid fa-check"></i>щомісячний контроль сплати податків</li>
+                            <li><i class="fa-solid fa-check"></i>заповнення книги обліку доходів</li>
+                            <li><i class="fa-solid fa-check"></i>підготовка та щоквартальна здача звітності</li>
+                            <li><i class="fa-solid fa-check"></i>від 5 найманий працівник (первинні документи, податки
+                                та звітність)</li>
+                            <li><i class="fa-solid fa-check"></i>консультування</li>
+                        </ul>
+                        <p class="cost">від 2700 грн</p>
+                    </article>
+                </section>
+
+                <section class="price-category bg-hand" id="without_tax">
+                    <span>3</span>
+                    <h2 class="price-category__name">Для юридичних осіб на єдиному податку без ПДВ</h2>
+                    <article class="price-item">
+                        <h3 class="price-item__name">Пакет мінімальний</h3>
+                        <ul class="price-item__check">
+                            <li><i class="fa-solid fa-check"></i>до 20 операцій на міцсяць</li>
+                            <li><i class="fa-solid fa-check"></i> до 2 співробітників
+                            </li>
+                        </ul>
+                        <p class="cost">від 3500 грн</p>
+                    </article>
+                    <article class="price-item">
+                        <h3 class="price-item__name">Пакет максимальний</h3>
+                        <ul class="price-item__check">
+                            <li><i class="fa-solid fa-check"></i>більше 20 операцій на міцсяць</li>
+                            <li><i class="fa-solid fa-check"></i>більше 2 співробітників</li>
+                            <i>Можливе додаткове подання звітності:</i>
+                            <li>• по військовому обліку</li>
+                            <li>• по податку (оренді) на землю та нерухомість</li>
+                            <li>• по рентній платі</li>
+                            <li>• по екологічному податку</li>
+                            <li>• в статистику</li>
+                        </ul>
+                        <p class="cost">ціна розраховується індивідуально</p>
+                    </article>
+                </section>
+                <section class="price-category bg-hand" id="with_tax">
+                    <span>4</span>
+                    <h2 class="price-category__name">Для юридичних осіб на загальній системі оподаткування з ПДВ</h2>
+                    <article class="price-item">
+                        <h3 class="price-item__name">Пакет мінімальний</h3>
+                        <ul class="price-item__check">
+                            <li><i class="fa-solid fa-check"></i>до 10 операцій на міцсяць</li>
+                            <li><i class="fa-solid fa-check"></i>до 2 співробітників</li>
+                        </ul>
+                        <p class="cost">від 5000 грн</p>
+                    </article>
+                    <article class="price-item">
+                        <h3 class="price-item__name">Пакет стандарт</h3>
+                        <ul class="price-item__check">
+                            <li><i class="fa-solid fa-check"></i>до 30 операцій на міцсяць</li>
+                            <li><i class="fa-solid fa-check"></i>до 5 співробітників</li>
+                        </ul>
+                        <p class="cost">від 10000 грн</p>
+                    </article>
+                    <article class="price-item">
+                        <h3 class="price-item__name">Пакет максимальний</h3>
+                        <ul class="price-item__check">
+                            <li><i class="fa-solid fa-check"></i>більше 30 операцій на міцсяць</li>
+                            <li><i class="fa-solid fa-check"></i>більше 5 співробітників</li>
+                            <i>Можливе додаткове подання звітності:</i>
+                            <li>• по військовому обліку</li>
+                            <li>• по податку (оренді) на землю та нерухомість</li>
+                            <li>• по рентній платі</li>
+                            <li>• по екологічному податку</li>
+                            <li>• в статистику</li>
+                        </ul>
+                        <p class="cost">ціна розраховується індивідуально</p>
+                    </article>
+                </section>
+                <section class="price-category bg-hand" id="other_services">
+                    <span>5</span>
+                    <h2 class="price-category__name">Інші послуги</h2>
+                    <div class="others">
+                        <article class="price-item">
+                            <h3 class="price-item__name">Відкриття ФОП</h3>
+                            <p class="cost">1500-2000 грн</p>
+                        </article>
+                        <article class="price-item">
+                            <h3 class="price-item__name">Підключення ПРРО</h3>
+                            <p class="cost">800-2000 грн</p>
+                        </article>
+                        <article class="price-item">
+                            <h3 class=" price-item__name">Здача річної звітності ФОП на єдиному податку 1 група</h3>
+                            <p class="cost">500 грн</p>
+                        </article>
+                        <article class="price-item">
+                            <h3 class="price-item__name">Здача річної звітності ФОП на єдиному податку 1 група с
+                                заповненням книги</h3>
+                            <p class="cost">1000 грн</p>
+                        </article>
+                        <article class="price-item">
+                            <h3 class="price-item__name">Здача річної звітності ФОП на єдиному податку 2 група</h3>
+                            <p class="cost">700 грн</p>
+                        </article>
+                        <article class="price-item">
+                            <h3 class="price-item__name">Здача річної звітності ФОП на єдиному податку 2 група с
+                                заповненням книги</h3>
+                            <p class="cost">1500 грн</p>
+                        </article>
+                        <article class="price-item">
+                            <h3 class="price-item__name">Здача квартальної звітності ФОП на єдиному податку 3 група</h3>
+                            <p class="cost">700 грн</p>
+                        </article>
+                        <article class="price-item">
+                            <h3 class="price-item__name">Кадровий облік</h3>
+                            <p class="cost">800 грн за 1 працівник + 400 грн за кожного наступного</p>
+                        </article>
+                    </div>
+                </section>
+            </section>
+
+        </div>
+        <div class="up-button__wrapper">
+            <a href="" class="up-button">
+                <svg width="29" height="29" viewBox="0 0 50 29" fill="none">
+                    <path class="up-button__path" d="M4.5 24.5L25 4L45.5 24.5" stroke="#545683" stroke-width="4"
+                        stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </a>
+        </div>
+    </main>
+    <footer class="footer lev-bg cw">
+        <div class="container">
+            <div class="footer-logo">
+                <a class="cw td" href="/">
+                    <img src="/assets/images/icon-round.webp" alt="" />
+                    <span class="cw">Бухгалтерська агенція "ЛЕВ"</span>
+                </a>
+                <span>Наш супровід - Ваш спокій</span>
+            </div>
+            <div class="footer-contacts">
+                <h2 class="footer-title">Контакти</h2>
+                <a class="phone cw td" href="tel:+380986073304">
+                    <i class="fa-solid fa-phone-volume"></i>
+                    +38 (098) 607-33-04
+                </a>
+                <a class="mail cw td" href="mailto:lev.buh.agency@gmail.com">
+                    <i class="fa-solid fa-envelope"></i>
+                    lev.buh.agency@gmail.com
+                </a>
+                <div class="social-icons-block">
+                    <a rel="noopener noreferrer" target="_blank" href="https://t.me/lev_buh" class="social-icons-link">
+                        <i class="fa-brands fa-telegram cw"></i>
+                    </a>
+                    <a rel="noopener noreferrer" target="_blank" href="viber://chat?number=+380986073304"
+                        class="social-icons-link">
+                        <i class="fa-brands fa-viber cw"></i>
+                    </a>
+                    <a rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/lev_buh_agency"
+                        class="social-icons-link">
+                        <i class="fa-brands fa-instagram cw"></i>
+                    </a>
+                    <a rel="noopener noreferrer" target="_blank"
+                        href="https://www.facebook.com/profile.php?id=61555635522199" class="social-icons-link">
+                        <i class="fa-brands fa-facebook cw"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-address">
+                <h2 class="footer-title">Адреса офісу</h2>
+                <a class="cw td" href="/contact">
+                    <i class="fa-solid fa-location-dot"></i>
+                    Харківська обл., смт Пісочин (с.Надточії), вул.Дачна 39
+                </a>
+            </div>
+        </div>
+    </footer>
+    <script src="/assets/js/bootstrap.js"></script>
+    <script src="/assets/js/main.js"></script>
+</body>
+
+</html>
