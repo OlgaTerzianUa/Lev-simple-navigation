@@ -20,9 +20,15 @@ jQuery(function ($) {
     if ($activeLink.length) {
       $activeLink.addClass("active");
     } else {
+
       console.error("Селектор не найден:", action); // Логирование ошибки
-    }
+      let action = url.replace('/', '').replace('.html', ''); // Убрать расширение .html
+		}
   }
+
+      
+
+
 
   // Обработчик для кнопки модального окна
   $(".modal-button-consulting").on("click", function () {
@@ -54,4 +60,5 @@ jQuery(function ($) {
     e.preventDefault();
     $("html, body").animate({ scrollTop: 0 }, "smooth");
   });
+
 });
