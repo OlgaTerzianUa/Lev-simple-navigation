@@ -4,7 +4,8 @@ jQuery(function ($) {
     if (url === '/') {
         $('a.nav-link.main').addClass('active');
     } else {
-        let action = url.replace('/', '');
+        let action = url.replace('/', '').replace('.html', ''); // Убрать расширение .html
+
 
         $(`a.nav-link.${action}`).addClass('active');
     }
