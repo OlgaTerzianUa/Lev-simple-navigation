@@ -16,6 +16,52 @@
     color: #468966 !important;
 }
 
+.breadcrumb-container {
+    /* margin: 20px 0; Отступы сверху и снизу */
+    background-color: #f5f5f5;
+    padding: 15px 0;
+    width: 100%;
+}
+
+.breadcrumb {
+    display: flex; /* Используем flexbox для выравнивания */
+    align-items: center; /* Центрируем элементы по вертикали */
+    list-style: none; /* Убираем маркеры списка */
+    padding: 0; /* Убираем отступы */
+    margin: 0 auto;
+    max-width: 1200px;
+   flex-wrap: wrap;
+}
+
+@media (max-width: 1200px) {
+    .breadcrumb {
+        max-width: 100%;
+        padding: 0 40px;
+    }
+}
+.breadcrumb-item {
+    margin-right: 8px; /* Отступ между элементами */
+}
+
+.breadcrumb-item a {
+    color: #1976d2; /* Цвет ссылок */
+    text-decoration: none; /* Убираем подчеркивание */
+}
+
+.breadcrumb-item a:hover {
+    text-decoration: underline; /* Подчеркивание при наведении */
+}
+
+.breadcrumb-item.active {
+    color: #000; /* Цвет активного элемента */
+}
+
+/* Добавление стиля для разделителя */
+.breadcrumb-item:not(:last-child)::after {
+    content: "/"; /* Разделитель */
+    margin: 0 8px; /* Отступы вокруг разделителя */
+    color: #666; /* Цвет разделителя */
+}
 
 .title-main,
 .title-children {
