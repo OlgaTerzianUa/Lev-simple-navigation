@@ -1,87 +1,103 @@
 jQuery(function ($) {
-  // Видаляємо клас active з усіх посилань
+  // Убираем класс active со всех ссылок в навигации
   $("a.nav-link").removeClass("active");
 
-  // Отримуємо поточний URL
+  // Получаем текущий URL
   let url = window.location.pathname;
-  // console.log("Поточний URL:", url); // Логування поточного URL
 
-  // Форматуємо action на основі URL
+  // Форматируем action на основе URL
   let action = url
-    .replace("/assets/pages/", "") // Видаляємо шлях до сторінки
-    .replace(".html", "") // Видаляємо .html
-    .replace(/\/+/g, ".") // Замінюємо слеші на крапки
-    .replace(/^\.|\.$/g, ""); // Видалення крапок на початку і в кінці
+    .replace("/assets/pages/", "") // Убираем путь к странице
+    .replace(".html", "") // Убираем .html
+    .replace(/\/+/g, ".") // Заменяем слеши на точки
+    .replace(/^\.|\.$/g, ""); // Убираем точки в начале и конце
 
-  // console.log("Сформований action:", action); // Логування action
-
-  // Перевірка на активне посилання на основі action
+  // Проверяем на активное ссылку на основе action
   if (action) {
-    // Додаємо клас active до відповідного посилання
+    // Добавляем класс active к соответствующей ссылке
     const $activeLink = $(`a.nav-link.${action}`);
     if ($activeLink.length) {
       $activeLink.addClass("active");
     } else {
-      // Якщо селектор не знайдено, виведемо помилку
-      console.error("Селектор не знайдено:", action);
+      // Если селектор не найден, выводим ошибку
+      console.error("Селектор не найден:", action);
     }
   } else {
-    // Якщо URL відповідає головній сторінці, додаємо клас active до головного посилання
+    // Если URL соответствует главной странице, добавляем класс active к главному ссылке
     $("a.nav-link.main").addClass("active");
   }
 
-  // Обробник для кнопки модального вікна
-  $(".modal-button-consulting").on("click", function () {
-    $("#myModal").modal("show");
+  // Ожидаем загрузку документа
+  document.addEventListener("DOMContentLoaded", function () {
+    // Получаем элементы модального окна и кнопки
+    const modal = document.getElementById("myModal");
+    const btn = document.querySelector(".modal-button-consulting");
+    const closeBtn = document.querySelector(".close-modal");
+
+    // Открытие модального окна
+    btn.onclick = function () {
+      modal.style.display = "block"; // Показываем модальное окно
+    };
+
+    // Закрытие модального окна
+    closeBtn.onclick = function () {
+      modal.style.display = "none"; // Скрываем модальное окно
+    };
+
+    // Закрытие модального окна при клике вне его
+    window.onclick = function (event) {
+      if (event.target === modal) {
+        modal.style.display = "none"; // Скрываем модальное окно
+      }
+    };
   });
 
-  // Обробник для закриття модального вікна
-  $(".close-modal").on("click", function () {
-    $("#myModal").modal("hide");
-  });
-
-  // Обробник для кнопки меню
+  // Обработчик для кнопки меню
   $(".header-navbar__btn").on("click", function () {
-    $(this).toggleClass("active");
-    $(".header-navbar__list").toggleClass("active");
+    $(this).toggleClass("active"); // Переключаем класс active на кнопке
+    $(".header-navbar__list").toggleClass("active"); // Переключаем класс active на списке
   });
 
-  // Обробник події прокручування для кнопки прокрутки вгору
+  // Обработчик события прокрутки для кнопки прокрутки вверх
   $(window).on("scroll", function () {
+    // Проверяем, прокручен ли экран больше высоты окна
     if ($(window).scrollTop() > window.innerHeight) {
-      $(".up-button__wrapper").addClass("is_visible");
+      $(".up-button__wrapper").addClass("is_visible"); // Показываем кнопку
     } else {
-      $(".up-button__wrapper").removeClass("is_visible");
+      $(".up-button__wrapper").removeClass("is_visible"); // Скрываем кнопку
     }
   });
 
-  // Прокрутка вгору при натисканні на кнопку
+  // Прокрутка вверх при нажатии на кнопку
   $(".up-button__wrapper").on("click", function (e) {
-    e.preventDefault();
-    $("html, body").animate({ scrollTop: 0 }, "smooth");
+    e.preventDefault(); // Предотвращаем стандартное поведение
+    $("html, body").animate({ scrollTop: 0 }, 600); // Анимация прокрутки
   });
 
-  // Функція валідації для кожного поля
+  // Функция валидации для каждого поля
   function validateField(field) {
-    const value = $(field).val().trim();
-    const fieldName = $(field).attr("id");
+    const value = $(field).val().trim(); // Получаем значение поля
+    const fieldName = $(field).attr("id"); // Получаем id поля
 
-    // Скидаємо помилку
-    $(field).removeClass("has-error"); // Видаляємо клас помилки з самого елемента
-    $(field).parent().removeClass("has-error"); // Видаляємо клас помилки з батька
-    $(field).next(".help-block-error").text(""); // Очищаємо текст помилки
+    // Сбрасываем ошибки
+    $(field).removeClass("has-error"); // Убираем класс ошибки с элемента
+    $(field).parent().removeClass("has-error"); // Убираем класс ошибки с родительского элемента
+    $(field).next(".help-block-error").text(""); // Очищаем текст ошибки
 
+    // Проверка каждого поля
     if (fieldName === "contactform-name") {
+      // Проверка имени
       if (!value) {
         $(field)
-          .addClass("has-error") // Додаємо клас помилки самому елементу
+          .addClass("has-error") // Добавляем класс ошибки к элементу
           .next(".help-block-error")
-          .text("Будь ласка, введіть ваше ім'я.")
+          .text("Будь ласка, введіть ваше ім'я.") // Сообщение об ошибке
           .parent()
-          .addClass("has-error"); // Додаємо клас помилки до батьківського елемента
+          .addClass("has-error"); // Добавляем класс ошибки к родителю
       }
     } else if (fieldName === "contactform-email") {
-      const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/; // Простий патерн для email
+      // Проверка email
+      const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/; // Шаблон для email
       if (!value) {
         $(field)
           .addClass("has-error")
@@ -98,6 +114,7 @@ jQuery(function ($) {
           .addClass("has-error");
       }
     } else if (fieldName === "contactform-phone") {
+      // Проверка номера телефона
       if (!value) {
         $(field)
           .addClass("has-error")
@@ -107,6 +124,7 @@ jQuery(function ($) {
           .addClass("has-error");
       }
     } else if (fieldName === "contactform-question") {
+      // Проверка вопроса
       if (!value) {
         $(field)
           .addClass("has-error")
@@ -118,55 +136,51 @@ jQuery(function ($) {
     }
   }
 
-  // Застосовуємо валідацію при втраті фокусу
+  // Применяем валидацию при потере фокуса
   $("#contactform-name").on("blur", function () {
-    validateField(this);
+    validateField(this); // Валидация поля имени
   });
 
   $("#contactform-email").on("blur", function () {
-    validateField(this);
+    validateField(this); // Валидация поля email
   });
 
   $("#contactform-phone").on("blur", function () {
-    validateField(this);
+    validateField(this); // Валидация поля телефона
   });
 
   $("#contactform-question").on("blur", function () {
-    validateField(this);
+    validateField(this); // Валидация поля вопроса
   });
 
-  // Обробник відправки форми
+  // Обработчик отправки формы
   $("#contact-form").on("submit", function (e) {
-    e.preventDefault(); // Зупиняємо стандартну поведінку форми
+    e.preventDefault(); // Останавливаем стандартное поведение формы
 
-    // Скидаємо помилки
-    $(".help-block-error").text("");
+    // Сбрасываем ошибки
+    $(".help-block-error").text(""); // Очищаем текст ошибок
 
-    let isValid = true;
+    let isValid = true; // Флаг для проверки валидности формы
 
-    // Перевірка кожного поля перед відправкою
+    // Проверка каждого поля перед отправкой
     $(
       "#contactform-name, #contactform-email, #contactform-phone, #contactform-question"
     ).each(function () {
-      validateField(this);
+      validateField(this); // Валидация каждого поля
       if ($(this).next(".help-block-error").text()) {
-        isValid = false; // Якщо є помилка, то форма не валідна
+        isValid = false; // Если есть ошибка, форма не валидна
       }
     });
 
-    // Якщо форма валідна, можна відправити її
+    // Если форма валидна, выполняем действия
     if (isValid) {
-      console.log("Форма валідна, відправляємо дані...");
-      // Тут можна виконати AJAX запит або іншу дію
+      console.log("Форма валидна, данные могут быть обработаны...");
 
-      // Очищення полів форми
+      // Очищение полей формы
       $("#contactform-name").val("");
       $("#contactform-email").val("");
       $("#contactform-phone").val("");
       $("#contactform-question").val("");
-
-      // Повідомлення про успішне відправлення (за бажанням)
-      // alert("Форма успішно відправлена!");
     }
   });
 });
