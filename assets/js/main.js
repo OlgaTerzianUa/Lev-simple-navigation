@@ -2,185 +2,171 @@ jQuery(function ($) {
   // Убираем класс active со всех ссылок в навигации
   $("a.nav-link").removeClass("active");
 
-  // Получаем текущий URL
-  let url = window.location.pathname;
+  // Получаем путь
+  const pathname = window.location.pathname;
+  const action = pathname
+    .replace("/assets/pages/", "")
+    .replace(".html", "")
+    .replace(/^\/+/, ""); // Убираем начальный слэш
 
-  // Форматируем action на основе URL
-  let action = url
-    .replace("/assets/pages/", "") // Убираем путь к странице
-    .replace(".html", "") // Убираем .html
-    .replace(/\/+/g, ".") // Заменяем слеши на точки
-    .replace(/^\.|\.$/g, ""); // Убираем точки в начале и конце
+  console.log("Значение action:", action); // Отладочное сообщение
 
-  // Проверяем на активное ссылку на основе action
-  if (action) {
-    // Добавляем класс active к соответствующей ссылке
-    const $activeLink = $(`a.nav-link.${action}`);
-    if ($activeLink.length) {
-      $activeLink.addClass("active");
-    } else {
-      // Если селектор не найден, выводим ошибку
-      console.error("Селектор не найден:", action);
-    }
+  // Если action пустой, используем ссылку на главную страницу
+  const $activeLink = action
+    ? $(`a.nav-link[href*="${action}"]`)
+    : $("a.nav-link[href*='index']");
+
+  if ($activeLink.length) {
+    $activeLink.addClass("active");
   } else {
-    // Если URL соответствует главной странице, добавляем класс active к главному ссылке
-    $("a.nav-link.main").addClass("active");
+    console.error("Селектор не найден:", action);
   }
-
-  // Ожидаем загрузку документа
-  document.addEventListener("DOMContentLoaded", function () {
-    // Получаем элементы модального окна и кнопки
-    const modal = document.getElementById("myModal");
-    const btn = document.querySelector(".modal-button-consulting");
-    const closeBtn = document.querySelector(".close-modal");
-
-    // Открытие модального окна
-    btn.onclick = function () {
-      modal.style.display = "block"; // Показываем модальное окно
-    };
-
-    // Закрытие модального окна
-    closeBtn.onclick = function () {
-      modal.style.display = "none"; // Скрываем модальное окно
-    };
-
-    // Закрытие модального окна при клике вне его
-    window.onclick = function (event) {
-      if (event.target === modal) {
-        modal.style.display = "none"; // Скрываем модальное окно
-      }
-    };
-  });
 
   // Обработчик для кнопки меню
   $(".header-navbar__btn").on("click", function () {
-    $(this).toggleClass("active"); // Переключаем класс active на кнопке
-    $(".header-navbar__list").toggleClass("active"); // Переключаем класс active на списке
+    $(this).toggleClass("active");
+    $(".header-navbar__list").toggleClass("active");
   });
 
-  // Обработчик события прокрутки для кнопки прокрутки вверх
+  // =============== Кнопка Прокрутка вверх
   $(window).on("scroll", function () {
-    // Проверяем, прокручен ли экран больше высоты окна
     if ($(window).scrollTop() > window.innerHeight) {
-      $(".up-button__wrapper").addClass("is_visible"); // Показываем кнопку
+      $(".up-button__wrapper").addClass("is_visible");
     } else {
-      $(".up-button__wrapper").removeClass("is_visible"); // Скрываем кнопку
+      $(".up-button__wrapper").removeClass("is_visible");
     }
   });
 
-  // Прокрутка вверх при нажатии на кнопку
   $(".up-button__wrapper").on("click", function (e) {
-    e.preventDefault(); // Предотвращаем стандартное поведение
-    $("html, body").animate({ scrollTop: 0 }, 600); // Анимация прокрутки
+    e.preventDefault();
+    $("html, body").animate({ scrollTop: 0 }, 600);
   });
 
-  // Функция валидации для каждого поля
-  function validateField(field) {
-    const value = $(field).val().trim(); // Получаем значение поля
-    const fieldName = $(field).attr("id"); // Получаем id поля
+  // =========== Модальное окно
 
-    // Сбрасываем ошибки
-    $(field).removeClass("has-error"); // Убираем класс ошибки с элемента
-    $(field).parent().removeClass("has-error"); // Убираем класс ошибки с родительского элемента
-    $(field).next(".help-block-error").text(""); // Очищаем текст ошибки
-
-    // Проверка каждого поля
-    if (fieldName === "contactform-name") {
-      // Проверка имени
-      if (!value) {
-        $(field)
-          .addClass("has-error") // Добавляем класс ошибки к элементу
-          .next(".help-block-error")
-          .text("Будь ласка, введіть ваше ім'я.") // Сообщение об ошибке
-          .parent()
-          .addClass("has-error"); // Добавляем класс ошибки к родителю
-      }
-    } else if (fieldName === "contactform-email") {
-      // Проверка email
-      const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/; // Шаблон для email
-      if (!value) {
-        $(field)
-          .addClass("has-error")
-          .next(".help-block-error")
-          .text("Будь ласка, введіть ваш email.")
-          .parent()
-          .addClass("has-error");
-      } else if (!value.match(emailPattern)) {
-        $(field)
-          .addClass("has-error")
-          .next(".help-block-error")
-          .text("Будь ласка, введіть правильний email.")
-          .parent()
-          .addClass("has-error");
-      }
-    } else if (fieldName === "contactform-phone") {
-      // Проверка номера телефона
-      if (!value) {
-        $(field)
-          .addClass("has-error")
-          .next(".help-block-error")
-          .text("Будь ласка, введіть номер телефону.")
-          .parent()
-          .addClass("has-error");
-      }
-    } else if (fieldName === "contactform-question") {
-      // Проверка вопроса
-      if (!value) {
-        $(field)
-          .addClass("has-error")
-          .next(".help-block-error")
-          .text("Будь ласка, введіть коротке питання.")
-          .parent()
-          .addClass("has-error");
-      }
-    }
+  // Функция для закрытия модального окна и очистки формы
+  function closeModalAndResetForm() {
+    $("#myModal")
+      .css("display", "none")
+      .attr("aria-hidden", "true")
+      .attr("inert", "");
+    $("#contact-form").trigger("reset"); // Очищаем поля формы
+    $(".help-block-error").text(""); // Убираем сообщения об ошибках
   }
 
-  // Применяем валидацию при потере фокуса
+  // Открытие модального окна
+  $(".modal-button-consulting").on("click", function () {
+    $("#myModal")
+      .css("display", "block")
+      .attr("aria-hidden", "false")
+      .removeAttr("inert");
+  });
+
+  // Закрытие модального окна при клике на кнопку закрытия
+  $(".close-modal, .close").on("click", closeModalAndResetForm);
+
+  // Закрытие модального окна при клике вне его
+  $(window).on("click", function (event) {
+    if ($(event.target).is("#myModal")) {
+      closeModalAndResetForm();
+    }
+  });
+
+  // ========== Валидация каждого поля отдельно ==========
+
+  // Функция для проверки и валидации
+  function validateField($field, emptyMessage, formatMessage, pattern) {
+    const value = $field.val().trim();
+    $field.removeClass("has-error").next(".help-block-error").text("");
+
+    if (!value) {
+      console.log(`Проверка пустого поля: ${$field.attr("id")}`);
+      console.log(`Сообщение для пустого поля: ${emptyMessage}`);
+      $field.addClass("has-error").next(".help-block-error").text(emptyMessage);
+      return false; // Возвращаем false, если поле пустое
+    }
+
+    if (pattern && !pattern.test(value)) {
+      console.log(
+        `Некорректное значение: ${value}, сообщение: ${formatMessage}`
+      );
+      $field
+        .addClass("has-error")
+        .next(".help-block-error")
+        .text(formatMessage);
+      return false; // Возвращаем false, если формат некорректен
+    }
+
+    return true; // Возвращаем true, если всё корректно
+  }
+
+  // Валидация имени
   $("#contactform-name").on("blur", function () {
-    validateField(this); // Валидация поля имени
+    validateField($(this), "Будь ласка, введіть ваше ім'я.", "", null);
   });
 
+  // Валидация email
   $("#contactform-email").on("blur", function () {
-    validateField(this); // Валидация поля email
+    validateField(
+      $(this),
+      "Будь ласка, введіть ваш email.",
+      "Заповніть коректно email у форматі: example@domain.com.",
+      /^[^ ]+@[^ ]+\.[a-z]{2,3}$/i
+    );
   });
 
+  // Валидация телефона
   $("#contactform-phone").on("blur", function () {
-    validateField(this); // Валидация поля телефона
+    validateField(
+      $(this),
+      "Будь ласка, введіть номер телефону.",
+      "Заповніть коректно номер телефону у форматі: +38 (012) 345-67-89.",
+      /^\+38 \(\d{3}\) \d{3}-\d{2}-\d{2}$/
+    );
   });
 
+  // Валидация вопроса
   $("#contactform-question").on("blur", function () {
-    validateField(this); // Валидация поля вопроса
+    validateField($(this), "Будь ласка, введіть коротке питання.", "", null);
   });
 
-  // Обработчик отправки формы
+  // =============== Обработчик отправки формы
   $("#contact-form").on("submit", function (e) {
-    e.preventDefault(); // Останавливаем стандартное поведение формы
+    e.preventDefault();
 
-    // Сбрасываем ошибки
-    $(".help-block-error").text(""); // Очищаем текст ошибок
+    let isValid = true;
 
-    let isValid = true; // Флаг для проверки валидности формы
+    // Проверяем каждое поле на валидность
+    isValid &= validateField(
+      $("#contactform-name"),
+      "Будь ласка, введіть ваше ім'я.",
+      "",
+      null
+    );
+    isValid &= validateField(
+      $("#contactform-email"),
+      "Будь ласка, введіть ваш email.",
+      "Заповніть коректно email у форматі: example@domain.com.",
+      /^[^ ]+@[^ ]+\.[a-z]{2,3}$/i
+    );
+    isValid &= validateField(
+      $("#contactform-phone"),
+      "Будь ласка, введіть номер телефону.",
+      "Заповніть коректно номер телефону у форматі: +38 (012) 345-67-89.",
+      /^\+38 \(\d{3}\) \d{3}-\d{2}-\d{2}$/
+    );
+    isValid &= validateField(
+      $("#contactform-question"),
+      "Будь ласка, введіть коротке питання.",
+      "",
+      null
+    );
 
-    // Проверка каждого поля перед отправкой
-    $(
-      "#contactform-name, #contactform-email, #contactform-phone, #contactform-question"
-    ).each(function () {
-      validateField(this); // Валидация каждого поля
-      if ($(this).next(".help-block-error").text()) {
-        isValid = false; // Если есть ошибка, форма не валидна
-      }
-    });
-
-    // Если форма валидна, выполняем действия
     if (isValid) {
       console.log("Форма валидна, данные могут быть обработаны...");
-
-      // Очищение полей формы
-      $("#contactform-name").val("");
-      $("#contactform-email").val("");
-      $("#contactform-phone").val("");
-      $("#contactform-question").val("");
+      closeModalAndResetForm(); // Закрываем модальное окно после успешной отправки
+    } else {
+      console.log("Ошибка валидации, форма не отправлена.");
     }
   });
 });

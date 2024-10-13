@@ -159,12 +159,28 @@ i {
     border: 1px solid #888;
     width: 80%; /* Ширина модального окна */
 }
-.close-modal {
+.close {
     color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
+    margin-top: -10px;
+    cursor: pointer;
+    transform: scale(1);
+    transition: transform 0.6s ease, margin-top 0.6s ease; /* Добавляем переход для margin-top */
 }
+
+.close:hover,
+.close:focus {
+    transform: scale(1.4);
+    margin-top: -18px; /* Смещение при наведении */
+}
+
+/* Добавляем дополнительный класс для анимации обратно */
+.close:not(:hover):not(:focus) {
+    transition: transform 0.3s ease, margin-top 0.3s ease; /* Уменьшаем время анимации при возврате */
+}
+
 
 .close-modal:hover,
 .close-modal:focus {
