@@ -1,3 +1,6 @@
+*{
+    box-sizing: border-box;
+}
 html {
     font-size: 16px;
 }
@@ -16,16 +19,9 @@ html {
         max-width: 540px;
     }
 }
-
 @media (min-width: 768px) {
     .container {
         max-width: 720px;
-    }
-}
-
-@media (min-width: 992px) {
-    .container {
-        max-width: 960px;
     }
 }
 
@@ -146,9 +142,52 @@ i {
 }
 
 .modal {
-    top: 10%;
+    display: none;
+    position: fixed; /* Открывается поверх всего */
+    z-index: 1000; /* На переднем плане */
+    left: 0;
+    top: 0;
+    width: 100%; /* Полная ширина */
+    height: 100%; /* Полная высота */
+    overflow: auto; /* Прокрутка при необходимости */
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
+}
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* Отступ сверху и по центру */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Ширина модального окна */
+}
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: -10px;
+    cursor: pointer;
+    transform: scale(1);
+    transition: transform 0.6s ease, margin-top 0.6s ease; /* Добавляем переход для margin-top */
 }
 
+.close:hover,
+.close:focus {
+    transform: scale(1.4);
+    margin-top: -18px; /* Смещение при наведении */
+}
+
+/* Добавляем дополнительный класс для анимации обратно */
+.close:not(:hover):not(:focus) {
+    transition: transform 0.3s ease, margin-top 0.3s ease; /* Уменьшаем время анимации при возврате */
+}
+
+
+.close-modal:hover,
+.close-modal:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
 .modal-open {
     overflow: scroll !important;
     padding-right: 0 !important;
@@ -157,5 +196,25 @@ i {
 .form-control:focus {
     color: #468966;
     border-color: #468966;
+    box-shadow: 0 0 0 0.25rem #46896640
+}
+.modal-footer {
+    margin-top: 20px;
+    display: flex; /* Включаем флекс-бокс */
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.modal-footer .btn {
+    flex-grow: 1; /* Позволяет кнопкам расширяться, заполняя доступное пространство */
+    min-width: 0; /* Позволяет кнопкам сжиматься до нуля, если это необходимо */
+}
+.form-control:hover,
+.form-control:focus,
+.btn-success:hover,
+.btn-success:focus {
+    text-decoration: none;
+    cursor: pointer;
+    border-color: #264d39;
     box-shadow: 0 0 0 0.25rem #46896640
 }

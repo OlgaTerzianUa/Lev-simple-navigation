@@ -10,7 +10,7 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    gap: 80px;
+    justify-content: space-evenly;
     padding: 20px;
     border-top: solid 1px #468966;
 }
@@ -23,7 +23,83 @@
     padding: 15px;
     overflow: hidden;
 }
+.phone {
+    flex: 0 1 auto; /* Элемент не будет сжиматься, будет расти до заданной ширины */
+    min-width: 150px; /* Минимальная ширина для номера телефона */
+}
+.form-group {
+    margin-bottom: 15px;
+}
+.form-control {
+    margin-top: 10px;
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+}
+.help-block{
+    color: #a94442;
+}
+.has-error {
+    border-color: #a94442;
+    box-shadow: inset 1px 1px rgba(0, 0, 0, 0.075);
+    margin-top: 20px; /* Отступ сверху для создания пространства между элементами */
+    margin-bottom: 10px; /* Отступ снизу для создания пространства между элементами */
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: #a94442;
+    padding: 5px;
+}
 
+.has-error:not(:first-child) {
+    box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.1); /* Тень только сверху для всех кроме первого */
+}
+
+.has-error:not(:last-child) {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Тень только снизу для всех кроме последнего */
+}
+
+.form-control:focus {
+    color: #468966;
+    border-color: #468966;
+    box-shadow: 0 0 0 0.25rem #46896640;
+    outline: 0;
+}
+h3, .h3 {
+    font-size: 24px;
+    font-weight: 500;
+}
+.btn-success {
+    color: #fff;
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: normal;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
 iframe {
     display: block;
     margin: 0 auto;
@@ -34,7 +110,7 @@ iframe {
 
 
 /* end contact page */
-@media(max-width: 767.8px) {
+@media(max-width: 1200px) {
 
     /* contact media */
     .contact-row {

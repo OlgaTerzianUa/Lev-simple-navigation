@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="../../favicon.ico">
     <title>Послуги</title>
     <link href="../css/style.css" rel="stylesheet">
     <!-- Подключаем jQuery из CDN -->
@@ -53,14 +54,22 @@
         </div>
     </header>
     <main role="main">
-        <div class="breadcrumbs" id="breadcrumbs">
-            <ul class="breadcrumb">
-                <ul class="breadcrumb container"><i class="ace-icon fa fa-home home-icon"></i>
-                    <li><a href="/">Головна</a></li>
-                    <li class="active">Serve</li>
-                </ul>
-            </ul>
+
+        <div class="breadcrumb-container">
+            <nav class="breadcrumb container" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="/" class="breadcrumb-link">
+                            <i class="ace-icon fa fa-home home-icon"></i>
+                            Головна
+                        </a>
+                    </li>
+                    <li class="breadcrumb-item active">Послуги</li>
+                </ol>
+            </nav>
         </div>
+
+
         <div class="site-about container lev-font-color">
             <div class="serve-bg bg-two_notebooks">
                 <div class="serve-row">

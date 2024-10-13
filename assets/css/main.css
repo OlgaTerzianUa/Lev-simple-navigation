@@ -16,6 +16,56 @@
     color: #468966 !important;
 }
 
+.breadcrumb-container {
+    background-color: #f8f9fa;
+    padding: 8px 16px; 
+    width: 100%; /* Занимаем всю ширину экрана */
+    margin-bottom: 20px;
+}
+
+.breadcrumb {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #6c757d;
+}
+
+.breadcrumb-item {
+    display: flex;
+    align-items: center;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    content: "/";
+    margin: 0 10px;
+    color: #6c757d;
+    font-weight: 300;
+}
+
+.breadcrumb-item a {
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+
+.breadcrumb-item a:hover .home-icon {
+    transform: scale(1.2); /* Увеличиваем иконку */
+    transition: transform 0.2s ease-in-out; /* Плавное увеличение */
+}
+
+.breadcrumb-item .home-icon {
+    margin-right: 6px;
+    transition: transform 0.2s ease-in-out; /* Переход для увеличения */
+}
+
 
 .title-main,
 .title-children {

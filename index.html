@@ -2,29 +2,27 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 
     <title>ЛЕВ Бухгалтерська агенція</title>
-t">
-    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet" />
 
-
-<!-- Подключаем jQuery из CDN -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
+    <!-- Подключаем jQuery из CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
-
     <header class="header">
         <div class="header-menu lev-font-color">
             <div class="container">
                 <nav class="header-menu__container">
                     <div class="header-logo">
                         <a class="header-logo__link" href="index.html">
-                            <img src="assets/images/icon-round.webp" alt=""> </a>
+                            <img src="assets/images/icon-round.webp" alt="" />
+                        </a>
                     </div>
                     <div class="header-navbar">
                         <div class="header-navbar__btn">
@@ -56,89 +54,91 @@ t">
             </div>
         </div>
     </header>
+
     <main role="main">
         <div id="main-fon" class="text-white fon-title">
             <div class="container">
                 <div class="title-main">
-                    Бухгалтерська<br>
+                    Бухгалтерська<br />
                     агенція "ЛЕВ"
                 </div>
-                <div class="small-font title-children">
-                    Наш супровід - Ваш спокій </div>
+                <div class="small-font title-children">Наш супровід - Ваш спокій</div>
                 <div class="consultation-appointment">
-                    <button type="button" id="w0" class="btn btn-light modal-button-consulting btn" data-toggle="modal"
-                        data-target="#myModal">Запис на консультацію</button>
+                    <button type="button" id="w0" class="btn btn-light modal-button-consulting" data-toggle="modal"
+                        data-target="#myModal">
+                        Запис на консультацію
+                    </button>
                 </div>
             </div>
         </div>
         <div class="container">
             <div class="body-content">
-
-                <!-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                <div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
                     aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
+                            <span class="close">&times;</span>
                             <div class="modal-body">
-                                <form id="contact-form" action="/main/home/create-consulting" method="post">
-                                    <input type="hidden" name="_csrf-frontend"
-                                        value="tqvqaFvz8EH5rcbh9ghRdQPBJSGtl9xgxzoYtxbNCeXf5oddIcOlCrjPk5u6ZB03cJl8R5jmngahW1aPfYV_tg==">
+                                <form id="contact-form" action="#" method="get">
                                     <div class="form-group field-contactform-name required">
                                         <label class="control-label" for="contactform-name">Ім'я</label>
                                         <input type="text" id="contactform-name" class="form-control"
-                                            name="ContactForm[name]" autofocus="" aria-required="true">
-
-                                        <div class="help-block"></div>
+                                            name="ContactForm[name]" autofocus="" aria-required="true"
+                                            aria-invalid="true" />
+                                        <p class="help-block help-block-error"></p>
                                     </div>
                                     <div class="form-group field-contactform-email required">
                                         <label class="control-label" for="contactform-email">Email</label>
                                         <input type="text" id="contactform-email" class="form-control"
-                                            name="ContactForm[email]" aria-required="true">
-
-                                        <div class="help-block"></div>
+                                            name="ContactForm[email]" aria-required="true"
+                                            placeholder="example@domain.com" /> <!-- Добавлен плейсхолдер -->
+                                        <p class="help-block help-block-error"></p>
                                     </div>
                                     <div class="form-group field-contactform-phone required">
                                         <label class="control-label" for="contactform-phone">Номер телефону</label>
                                         <input type="text" id="contactform-phone" class="form-control"
-                                            name="ContactForm[phone]" aria-required="true">
-
-                                        <div class="help-block"></div>
+                                            name="ContactForm[phone]" aria-required="true"
+                                            placeholder="+38 (012) 345-67-89" /> <!-- Добавлен плейсхолдер -->
+                                        <p class="help-block help-block-error"></p>
                                     </div>
                                     <div class="form-group field-contactform-question required">
                                         <label class="control-label" for="contactform-question">Коротке питання</label>
                                         <input type="text" id="contactform-question" class="form-control"
-                                            name="ContactForm[question]" aria-required="true">
-
-                                        <div class="help-block"></div>
+                                            name="ContactForm[question]" aria-required="true" />
+                                        <p class="help-block help-block-error"></p>
                                     </div>
-                                    <div class="form-group consulting-submit-button">
-                                        <button type="submit" class="btn btn-success"
-                                            name="contact-button">Надіслати</button>
+                                    <div class="modal-footer">
+                                        <button type="submit" class="btn btn-success lev-bg" name="contact-button">
+                                            Надіслати
+                                        </button>
+                                        <button type="button" class="btn btn-success close-modal lev-color"
+                                            data-dismiss="modal">
+                                            Закрити
+                                        </button>
                                     </div>
                                 </form>
                             </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary close-modal" data-dismiss="modal">
-                                    Закрити </button>
-                            </div>
                         </div>
                     </div>
-                </div> -->
+                </div>
+
                 <div class="content-block lev-font-color">
-                    <div class="content-block__title  lev-font-color">
-                        Про нас:
-                    </div>
+                    <div class="content-block__title lev-font-color">Про нас:</div>
                     <div class="about_us">
                         <p class="tf">
-                            Ми – бухгалтерська агенція, що досить недовго працює на ринку України. Але сьогодні можемо з
-                            впевненістю сказати, що за нашими плечима вже багато задоволених клієнтів.
-                            Це все тому, що провідні бухгалтери нашої агенції мають досвід роботи в фінансовій сфері
-                            понад 15 років, а помічниці – доповнюють їх наполегливістю в праці та навчанні.
-                            Нам довіряють вести свою бухгалтерію промислові підприємства та підприємства торгівлі
-                            (юридичні особи на загальній системі оподаткування з ПДВ), представники громадського
-                            харчування та ІТ-спеціалісти (ФОПи на єдиному податку), надавачі послуг населенню та
-                            неприбуткові організації.
-                            Ми беремо на себе всю рутинну роботу з бухгалтерського обліку, складаємо податкову звітність
-                            та допомагаємо в усіх напрямках управлінського обліку.
+                            Ми – бухгалтерська агенція, що досить недовго працює на ринку
+                            України. Але сьогодні можемо з впевненістю сказати, що за нашими
+                            плечима вже багато задоволених клієнтів. Це все тому, що
+                            провідні бухгалтери нашої агенції мають досвід роботи в
+                            фінансовій сфері понад 15 років, а помічниці – доповнюють їх
+                            наполегливістю в праці та навчанні. Нам довіряють вести свою
+                            бухгалтерію промислові підприємства та підприємства торгівлі
+                            (юридичні особи на загальній системі оподаткування з ПДВ),
+                            представники громадського харчування та ІТ-спеціалісти (ФОПи на
+                            єдиному податку), надавачі послуг населенню та неприбуткові
+                            організації. Ми беремо на себе всю рутинну роботу з
+                            бухгалтерського обліку, складаємо податкову звітність та
+                            допомагаємо в усіх напрямках управлінського обліку.
                         </p>
                     </div>
                 </div>
@@ -146,38 +146,45 @@ t">
         </div>
         <div class="content-block__bg">
             <div class="container">
-                <div class="content-block__title">Нас обирають:
-                </div>
+                <div class="content-block__title">Нас обирають:</div>
                 <div class="content-block choose">
                     <div class="content-block__item">
-                        <p class="content-block__item-header">Mалий та середній бізнес (ТОВ, ФОП)</p>
+                        <p class="content-block__item-header">
+                            Mалий та середній бізнес (ТОВ, ФОП)
+                        </p>
                         <p class="content-block__item-text">
-                            Юридичні особи, які прагнуть оптимізувати свою діяльність та зосередитися на основних
-                            завданнях,
-                            шукають ефективне та професійне ведення обліку та кадрового управління за доступними
+                            Юридичні особи, які прагнуть оптимізувати свою діяльність та
+                            зосередитися на основних завданнях, шукають ефективне та
+                            професійне ведення обліку та кадрового управління за доступними
                             витратами.
                         </p>
                     </div>
                     <div class="content-block__item">
-                        <p class="content-block__item-header">Фрілансери та самозайняті особи</p>
+                        <p class="content-block__item-header">
+                            Фрілансери та самозайняті особи
+                        </p>
                         <p class="content-block__item-text">
-                            Фізичні особи - підприємці, які ведуть власний бізнес,
-                            і прагнуть ефективних рішень для свого обліку та оподаткування.
+                            Фізичні особи - підприємці, які ведуть власний бізнес, і
+                            прагнуть ефективних рішень для свого обліку та оподаткування.
                         </p>
                     </div>
                     <div class="content-block__item">
-                        <p class="content-block__item-header">Стартапи та нові підприємства</p>
+                        <p class="content-block__item-header">
+                            Стартапи та нові підприємства
+                        </p>
                         <p class="content-block__item-text">
-                            Нові компанії, які потребують експертної допомоги в бухгалтерському та управлінському
-                            обліку,
-                            але не можуть собі дозволити великий внутрішній штат спеціалістів.
+                            Нові компанії, які потребують експертної допомоги в
+                            бухгалтерському та управлінському обліку, але не можуть собі
+                            дозволити великий внутрішній штат спеціалістів.
                         </p>
                     </div>
                     <div class="content-block__item">
-                        <p class="content-block__item-header">Сектор не комерційних організацій</p>
+                        <p class="content-block__item-header">
+                            Сектор не комерційних організацій
+                        </p>
                         <p class="content-block__item-text">
-                            Неприбуткові організації, які не мають прибуткової мети,
-                            і шукають послуги з обліку та фінансового управління
+                            Неприбуткові організації, які не мають прибуткової мети, і
+                            шукають послуги з обліку та фінансового управління
                         </p>
                     </div>
                 </div>
@@ -187,11 +194,13 @@ t">
                 </div>
                 <div class="content-block cw">
                     <div class="content-block__item">
-                        <p class="content-block__item-header">Глибокий досвід та професіоналізм</p>
+                        <p class="content-block__item-header">
+                            Глибокий досвід та професіоналізм
+                        </p>
                         <p class="content-block__item-text">
-                            Провідні бухгалтери агенції мають досвід роботи понад 16 років та гарантують високу
-                            експертизу
-                            й точність у веденні обліку для різних галузей.
+                            Провідні бухгалтери агенції мають досвід роботи понад 16 років
+                            та гарантують високу експертизу й точність у веденні обліку для
+                            різних галузей.
                         </p>
                     </div>
                     <div class="content-block__item">
@@ -204,43 +213,50 @@ t">
                     <div class="content-block__item">
                         <p class="content-block__item-header">Онлайн обслуговування</p>
                         <p class="content-block__item-text">
-                            Надання послуг як в офісі, так і онлайн,
-                            що забезпечує максимальну зручність та доступність для клієнтів.
+                            Надання послуг як в офісі, так і онлайн, що забезпечує
+                            максимальну зручність та доступність для клієнтів.
                         </p>
                     </div>
                     <div class="content-block__item">
                         <p class="content-block__item-header">Індивідуальний підхід</p>
                         <p class="content-block__item-text">
-                            Орієнтація на потреби клієнтів різних галузей, забезпечуючи персоналізовані рішення та
-                            консультації.
+                            Орієнтація на потреби клієнтів різних галузей, забезпечуючи
+                            персоналізовані рішення та консультації.
                         </p>
                     </div>
                     <div class="content-block__item">
-                        <p class="content-block__item-header">Висока ефективність та швидкість</p>
+                        <p class="content-block__item-header">
+                            Висока ефективність та швидкість
+                        </p>
                         <p class="content-block__item-text">
-                            Використання передових технологій для автоматизації процесів та оперативного вирішення
-                            завдань.
+                            Використання передових технологій для автоматизації процесів та
+                            оперативного вирішення завдань.
                         </p>
                     </div>
                     <div class="content-block__item">
-                        <p class="content-block__item-header">Різноманітні галузі обслуговування</p>
+                        <p class="content-block__item-header">
+                            Різноманітні галузі обслуговування
+                        </p>
                         <p class="content-block__item-text">
-                            Досвід роботи з підприємствами торгівлі, виробництва, надання послуг, громадського
-                            харчування, IT сфери та неприбуткових організацій.
+                            Досвід роботи з підприємствами торгівлі, виробництва, надання
+                            послуг, громадського харчування, IT сфери та неприбуткових
+                            організацій.
                         </p>
                     </div>
                     <div class="content-block__item">
                         <p class="content-block__item-header">Безпека даних</p>
                         <p class="content-block__item-text">
-                            Гарантована безпека та конфіденційність даних клієнтів,
-                            що особливо важливо для обробки чутливої фінансової інформації.
+                            Гарантована безпека та конфіденційність даних клієнтів, що
+                            особливо важливо для обробки чутливої фінансової інформації.
                         </p>
                     </div>
                     <div class="content-block__item">
-                        <p class="content-block__item-header">Конкурентно-спроможні тарифи</p>
+                        <p class="content-block__item-header">
+                            Конкурентно-спроможні тарифи
+                        </p>
                         <p class="content-block__item-text">
-                            Агенція може запропонувати конкурентоспроможні тарифи та гнучку систему оплати для своїх
-                            клієнтів.
+                            Агенція може запропонувати конкурентоспроможні тарифи та гнучку
+                            систему оплати для своїх клієнтів.
                         </p>
                     </div>
                 </div>
@@ -260,8 +276,8 @@ t">
         <div class="container">
             <div class="footer-logo">
                 <a class="cw td" href="index.html">
-                    <img src="assets/images/icon-round.webp" alt=""> <span class="cw">Бухгалтерська агенція
-                        "ЛЕВ"</span>
+                    <img src="assets/images/icon-round.webp" alt="" />
+                    <span class="cw">Бухгалтерська агенція "ЛЕВ"</span>
                 </a>
                 <span>Наш супровід - Ваш спокій</span>
             </div>
@@ -303,11 +319,8 @@ t">
         </div>
     </footer>
 
-
-<script src="assets/js/bootstrap.js"></script>
-<script src="assets/js/main.js"></script>
-
-
+    <!-- <script src="assets/js/bootstrap.js"></script> -->
+    <script src="assets/js/main.js"></script>
 </body>
 
 </html>

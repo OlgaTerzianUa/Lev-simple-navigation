@@ -5,11 +5,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="icon" type="image/x-icon" href="../../favicon.ico">
     <title>Контакти</title>
-   
+
     <link href="../css/style.css" rel="stylesheet">
-<!-- Подключаем jQuery из CDN -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Подключаем jQuery из CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
@@ -53,14 +54,21 @@
         </div>
     </header>
     <main role="main">
-        <div class="breadcrumbs" id="breadcrumbs">
-            <ul class="breadcrumb">
-                <ul class="breadcrumb container"><i class="ace-icon fa fa-home home-icon"></i>
-                    <li><a href="../../index.html">Головна</a></li>
-                    <li class="active">Contact</li>
-                </ul>
-            </ul>
+
+        <div class="breadcrumb-container">
+            <nav class="breadcrumb container" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="/" class="breadcrumb-link">
+                            <i class="ace-icon fa fa-home home-icon"></i>
+                            Головна
+                        </a>
+                    </li>
+                    <li class="breadcrumb-item active">Контакти</li>
+                </ol>
+            </nav>
         </div>
+
         <div class="site-contact lev-font-color container">
             <div class="contact-row">
                 <h3>Контакти</h3>
@@ -95,28 +103,25 @@
                 <div class="contact-column">
                     <h3>
                         Запис на консультацію: </h3>
-                    <form id="contact-form" action="/main/home/create-consulting" method="post">
-                        <input type="hidden" name="_csrf-frontend"
-                            value="o1wgWvLVe-AOeAbZjX5Ettuus52dwhxW1iGEtf3pOezKEU1viOUuq08aU6PBEgj0qPbq-6izXjCwQMqNlqFPvw==">
-                        <div class="form-group field-contactform-name required has-error">
+                    <form id="contact-form" action="#" method="get">
+                        <div class="form-group field-contactform-name required">
                             <label class="control-label" for="contactform-name">Ім'я</label>
                             <input type="text" id="contactform-name" class="form-control" name="ContactForm[name]"
                                 autofocus="" aria-required="true" aria-invalid="true">
 
-                            <p class="help-block help-block-error">Не може бути пустим</p>
+                            <p class="help-block help-block-error"></p>
                         </div>
                         <div class="form-group field-contactform-email required">
                             <label class="control-label" for="contactform-email">Email</label>
                             <input type="text" id="contactform-email" class="form-control" name="ContactForm[email]"
-                                aria-required="true">
+                                aria-required="true" placeholder="example@domain.com" /> <!-- Добавлен плейсхолдер -->
 
                             <p class="help-block help-block-error"></p>
                         </div>
                         <div class="form-group field-contactform-phone required">
                             <label class="control-label" for="contactform-phone">Номер телефону</label>
                             <input type="text" id="contactform-phone" class="form-control" name="ContactForm[phone]"
-                                aria-required="true">
-
+                                aria-required="true" placeholder="+38 (012) 345-67-89" /> <!-- Добавлен плейсхолдер -->
                             <p class="help-block help-block-error"></p>
                         </div>
                         <div class="form-group field-contactform-question required">
@@ -198,7 +203,7 @@
             </div>
         </div>
     </footer>
-    <script src="../js/bootstrap.js"></script>
+    <!-- <script src="../js/bootstrap.js"></script> -->
     <script src="../js/main.js"></script>
 </body>
 
