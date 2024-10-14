@@ -1,34 +1,52 @@
 jQuery(function ($) {
-  // Убираем класс active со всех ссылок в навигации
-  $("a.nav-link").removeClass("active");
-
-  // Получаем путь
-  const pathname = window.location.pathname;
-  const action = pathname
-    .replace("/assets/pages/", "")
-    .replace(".html", "")
-    .replace(/^\/+/, ""); // Убираем начальный слэш
-
-  console.log("Значение action:", action); // Отладочное сообщение
-
-  // Если action пустой, используем ссылку на главную страницу
-  const $activeLink = action
-    ? $(`a.nav-link[href*="${action}"]`)
-    : $("a.nav-link[href*='index']");
-
-  if ($activeLink.length) {
-    $activeLink.addClass("active");
-  } else {
-    console.error("Селектор не найден:", action);
+  // Функция для скрытия всех секций
+  function hideAllSections() {
+    $(".page-section").hide(); // Скрываем все секции
   }
 
-  // Обработчик для кнопки меню
-  $(".header-navbar__btn").on("click", function () {
-    $(this).toggleClass("active");
-    $(".header-navbar__list").toggleClass("active");
+  // Функция для показа активной секции
+  function showSection(sectionId) {
+    const section = $(`#${sectionId}`);
+    section.show(); // Показываем выбранную секцию
+    const headerHeight = $(".header").outerHeight(); // Получаем высоту хедера
+    $("html, body").animate({ scrollTop: 0 }, 600); // Прокручиваем на высоту хедера
+  }
+  // Убираем класс active со всех ссылок в навигации
+  function removeActiveClass() {
+    $("a.nav-link").removeClass("active");
+  }
+
+  // Обработчик кликов по ссылкам меню
+  $("a.nav-link").on("click", function (e) {
+    e.preventDefault(); // Предотвращаем стандартное поведение
+
+    const targetSectionId = $(this).attr("href").replace("#", ""); // Получаем ID секции
+
+    removeActiveClass(); // Убираем класс active со всех ссылок
+    $(this).addClass("active"); // Добавляем класс active к текущей ссылке
+
+    hideAllSections(); // Скрываем все секции
+    showSection(targetSectionId); // Показываем только нужную секцию
   });
 
-  // =============== Кнопка Прокрутка вверх
+  // Показываем первую секцию при загрузке страницы
+  const firstSectionId = $("section").first().attr("id");
+  hideAllSections(); // Скрываем все секции
+  showSection(firstSectionId); // Показываем первую секцию по умолчанию
+
+  // ============ гамбургер-меню
+  // Получаем элементы гамбургера и меню
+  const hamburger = document.querySelector(".header-navbar__btn");
+  const menu = document.querySelector(".header-navbar__list");
+
+  // Добавляем обработчик клика на гамбургер
+  hamburger.addEventListener("click", function () {
+    // Переключаем класс active для меню и гамбургера
+    menu.classList.toggle("active");
+    hamburger.classList.toggle("active");
+  });
+
+  // Кнопка Прокрутка вверх
   $(window).on("scroll", function () {
     if ($(window).scrollTop() > window.innerHeight) {
       $(".up-button__wrapper").addClass("is_visible");
@@ -42,9 +60,7 @@ jQuery(function ($) {
     $("html, body").animate({ scrollTop: 0 }, 600);
   });
 
-  // =========== Модальное окно
-
-  // Функция для закрытия модального окна и очистки формы
+  // Функция для закрытия модального окна и сброса формы
   function closeModalAndResetForm() {
     $("#myModal")
       .css("display", "none")
@@ -54,7 +70,6 @@ jQuery(function ($) {
     $(".help-block-error").text(""); // Убираем сообщения об ошибках
   }
 
-  // Открытие модального окна
   $(".modal-button-consulting").on("click", function () {
     $("#myModal")
       .css("display", "block")
@@ -62,50 +77,43 @@ jQuery(function ($) {
       .removeAttr("inert");
   });
 
-  // Закрытие модального окна при клике на кнопку закрытия
   $(".close-modal, .close").on("click", closeModalAndResetForm);
 
-  // Закрытие модального окна при клике вне его
   $(window).on("click", function (event) {
     if ($(event.target).is("#myModal")) {
       closeModalAndResetForm();
     }
   });
 
-  // ========== Валидация каждого поля отдельно ==========
+  function resetFormErrors() {
+    $(".has-error").removeClass("has-error");
+    $(".help-block-error").text("");
+  }
 
-  // Функция для проверки и валидации
   function validateField($field, emptyMessage, formatMessage, pattern) {
     const value = $field.val().trim();
     $field.removeClass("has-error").next(".help-block-error").text("");
 
     if (!value) {
-      console.log(`Проверка пустого поля: ${$field.attr("id")}`);
-      console.log(`Сообщение для пустого поля: ${emptyMessage}`);
       $field.addClass("has-error").next(".help-block-error").text(emptyMessage);
-      return false; // Возвращаем false, если поле пустое
+      return false;
     }
 
     if (pattern && !pattern.test(value)) {
-      console.log(
-        `Некорректное значение: ${value}, сообщение: ${formatMessage}`
-      );
       $field
         .addClass("has-error")
         .next(".help-block-error")
         .text(formatMessage);
-      return false; // Возвращаем false, если формат некорректен
+      return false;
     }
 
-    return true; // Возвращаем true, если всё корректно
+    return true;
   }
 
-  // Валидация имени
   $("#contactform-name").on("blur", function () {
     validateField($(this), "Будь ласка, введіть ваше ім'я.", "", null);
   });
 
-  // Валидация email
   $("#contactform-email").on("blur", function () {
     validateField(
       $(this),
@@ -115,28 +123,24 @@ jQuery(function ($) {
     );
   });
 
-  // Валидация телефона
   $("#contactform-phone").on("blur", function () {
     validateField(
       $(this),
       "Будь ласка, введіть номер телефону.",
       "Заповніть коректно номер телефону у форматі: +38 (012) 345-67-89.",
-      /^\+38 \(\d{3}\) \d{3}-\d{2}-\d{2}$/
+      /^\+38 \(\d{3}\) \d{3}-\d{2}-\д{2}$/
     );
   });
 
-  // Валидация вопроса
   $("#contactform-question").on("blur", function () {
     validateField($(this), "Будь ласка, введіть коротке питання.", "", null);
   });
 
-  // =============== Обработчик отправки формы
   $("#contact-form").on("submit", function (e) {
     e.preventDefault();
-
     let isValid = true;
+    resetFormErrors();
 
-    // Проверяем каждое поле на валидность
     isValid &= validateField(
       $("#contactform-name"),
       "Будь ласка, введіть ваше ім'я.",
@@ -153,7 +157,7 @@ jQuery(function ($) {
       $("#contactform-phone"),
       "Будь ласка, введіть номер телефону.",
       "Заповніть коректно номер телефону у форматі: +38 (012) 345-67-89.",
-      /^\+38 \(\d{3}\) \d{3}-\d{2}-\d{2}$/
+      /^\+38 \(\д{3}\) \д{3}-\д{2}-\д{2}$/
     );
     isValid &= validateField(
       $("#contactform-question"),
@@ -163,10 +167,7 @@ jQuery(function ($) {
     );
 
     if (isValid) {
-      console.log("Форма валидна, данные могут быть обработаны...");
-      closeModalAndResetForm(); // Закрываем модальное окно после успешной отправки
-    } else {
-      console.log("Ошибка валидации, форма не отправлена.");
+      closeModalAndResetForm(); // Закрываем модальное окно
     }
   });
 });

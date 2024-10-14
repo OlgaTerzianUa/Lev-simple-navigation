@@ -15,6 +15,7 @@
 </head>
 
 <body>
+
     <header class="header">
         <div class="header-menu lev-font-color">
             <div class="container">
@@ -32,16 +33,16 @@
                         </div>
                         <ul class="header-navbar__list">
                             <li class="nav-item">
-                                <a class="nav-link main active" href="index.html">Головна</a>
+                                <a class="nav-link main" href="#main" data-target="section1">Головна</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link serve" href="assets/pages/serve.html">Послуги</a>
+                                <a class="nav-link serve" href="#serve" data-target="section2">Послуги</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link price" href="assets/pages/price.html">Ціни</a>
+                                <a class="nav-link price" href="#price" data-target="section3">Ціни</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link contact" href="assets/pages/contact.html">Контакти</a>
+                                <a class="nav-link contact" href="#contact" data-target="section4">Контакти</a>
                             </li>
                         </ul>
                         <a class="header-navbar__contacts" href="tel:+380986073304">
@@ -56,26 +57,27 @@
     </header>
 
     <main role="main">
-        <div id="main-fon" class="text-white fon-title">
-            <div class="container">
-                <div class="title-main">
-                    Бухгалтерська<br />
-                    агенція "ЛЕВ"
-                </div>
-                <div class="small-font title-children">Наш супровід - Ваш спокій</div>
-                <div class="consultation-appointment">
-                    <button type="button" id="w0" class="btn btn-light modal-button-consulting" data-toggle="modal"
-                        data-target="#myModal">
-                        Запис на консультацію
-                    </button>
+
+        <section id="main" class="page-section">
+            <div id="main-fon" class="text-white fon-title">
+                <div class="container">
+                    <div class="title-main">
+                        Бухгалтерська<br />
+                        агенція "ЛЕВ"
+                    </div>
+                    <div class="small-font title-children">Наш супровід - Ваш спокій</div>
+                    <div class="consultation-appointment">
+                        <button type="button" id="w0" class="btn btn-light modal-button-consulting" data-toggle="modal"
+                            data-target="#myModal">
+                            Запис на консультацію
+                        </button>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="container">
-            <div class="body-content">
-                <div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-                    aria-hidden="true">
-                    <div class="modal-dialog" role="document">
+            <div class="container">
+                <div class="body-content">
+                    <div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                        aria-hidden="true">
                         <div class="modal-content">
                             <span class="close">&times;</span>
                             <div class="modal-body">
@@ -102,7 +104,8 @@
                                         <p class="help-block help-block-error"></p>
                                     </div>
                                     <div class="form-group field-contactform-question required">
-                                        <label class="control-label" for="contactform-question">Коротке питання</label>
+                                        <label class="control-label" for="contactform-question">Коротке
+                                            питання</label>
                                         <input type="text" id="contactform-question" class="form-control"
                                             name="ContactForm[question]" aria-required="true" />
                                         <p class="help-block help-block-error"></p>
@@ -120,148 +123,600 @@
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="content-block lev-font-color">
-                    <div class="content-block__title lev-font-color">Про нас:</div>
-                    <div class="about_us">
-                        <p class="tf">
-                            Ми – бухгалтерська агенція, що досить недовго працює на ринку
-                            України. Але сьогодні можемо з впевненістю сказати, що за нашими
-                            плечима вже багато задоволених клієнтів. Це все тому, що
-                            провідні бухгалтери нашої агенції мають досвід роботи в
-                            фінансовій сфері понад 15 років, а помічниці – доповнюють їх
-                            наполегливістю в праці та навчанні. Нам довіряють вести свою
-                            бухгалтерію промислові підприємства та підприємства торгівлі
-                            (юридичні особи на загальній системі оподаткування з ПДВ),
-                            представники громадського харчування та ІТ-спеціалісти (ФОПи на
-                            єдиному податку), надавачі послуг населенню та неприбуткові
-                            організації. Ми беремо на себе всю рутинну роботу з
-                            бухгалтерського обліку, складаємо податкову звітність та
-                            допомагаємо в усіх напрямках управлінського обліку.
-                        </p>
+                    <div class="content-block lev-font-color">
+                        <div class="content-block__title lev-font-color">Про нас:</div>
+                        <div class="about_us">
+                            <p class="tf">
+                                Ми – бухгалтерська агенція, що досить недовго працює на ринку
+                                України. Але сьогодні можемо з впевненістю сказати, що за нашими
+                                плечима вже багато задоволених клієнтів. Це все тому, що
+                                провідні бухгалтери нашої агенції мають досвід роботи в
+                                фінансовій сфері понад 15 років, а помічниці – доповнюють їх
+                                наполегливістю в праці та навчанні. Нам довіряють вести свою
+                                бухгалтерію промислові підприємства та підприємства торгівлі
+                                (юридичні особи на загальній системі оподаткування з ПДВ),
+                                представники громадського харчування та ІТ-спеціалісти (ФОПи на
+                                єдиному податку), надавачі послуг населенню та неприбуткові
+                                організації. Ми беремо на себе всю рутинну роботу з
+                                бухгалтерського обліку, складаємо податкову звітність та
+                                допомагаємо в усіх напрямках управлінського обліку.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="content-block__bg">
+            <div class="content-block__bg">
+                <div class="container">
+                    <div class="content-block__title">Нас обирають:</div>
+                    <div class="content-block choose">
+                        <div class="content-block__item">
+                            <p class="content-block__item-header">
+                                Mалий та середній бізнес (ТОВ, ФОП)
+                            </p>
+                            <p class="content-block__item-text">
+                                Юридичні особи, які прагнуть оптимізувати свою діяльність та
+                                зосередитися на основних завданнях, шукають ефективне та
+                                професійне ведення обліку та кадрового управління за доступними
+                                витратами.
+                            </p>
+                        </div>
+                        <div class="content-block__item">
+                            <p class="content-block__item-header">
+                                Фрілансери та самозайняті особи
+                            </p>
+                            <p class="content-block__item-text">
+                                Фізичні особи - підприємці, які ведуть власний бізнес, і
+                                прагнуть ефективних рішень для свого обліку та оподаткування.
+                            </p>
+                        </div>
+                        <div class="content-block__item">
+                            <p class="content-block__item-header">
+                                Стартапи та нові підприємства
+                            </p>
+                            <p class="content-block__item-text">
+                                Нові компанії, які потребують експертної допомоги в
+                                бухгалтерському та управлінському обліку, але не можуть собі
+                                дозволити великий внутрішній штат спеціалістів.
+                            </p>
+                        </div>
+                        <div class="content-block__item">
+                            <p class="content-block__item-header">
+                                Сектор не комерційних організацій
+                            </p>
+                            <p class="content-block__item-text">
+                                Неприбуткові організації, які не мають прибуткової мети, і
+                                шукають послуги з обліку та фінансового управління
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="content-block__title">
+                        Бухгалтерська агенція "ЛЕВ" - це:
+                    </div>
+                    <div class="content-block cw">
+                        <div class="content-block__item">
+                            <p class="content-block__item-header">
+                                Глибокий досвід та професіоналізм
+                            </p>
+                            <p class="content-block__item-text">
+                                Провідні бухгалтери агенції мають досвід роботи понад 16 років
+                                та гарантують високу експертизу й точність у веденні обліку для
+                                різних галузей.
+                            </p>
+                        </div>
+                        <div class="content-block__item">
+                            <p class="content-block__item-header">Широкий спектр послуг</p>
+                            <p class="content-block__item-text">
+                                Комплексне обслуговування з бухгалтерського, податкового,
+                                управлінського та кадрового обліку для різних видів підприємств.
+                            </p>
+                        </div>
+                        <div class="content-block__item">
+                            <p class="content-block__item-header">Онлайн обслуговування</p>
+                            <p class="content-block__item-text">
+                                Надання послуг як в офісі, так і онлайн, що забезпечує
+                                максимальну зручність та доступність для клієнтів.
+                            </p>
+                        </div>
+                        <div class="content-block__item">
+                            <p class="content-block__item-header">Індивідуальний підхід</p>
+                            <p class="content-block__item-text">
+                                Орієнтація на потреби клієнтів різних галузей, забезпечуючи
+                                персоналізовані рішення та консультації.
+                            </p>
+                        </div>
+                        <div class="content-block__item">
+                            <p class="content-block__item-header">
+                                Висока ефективність та швидкість
+                            </p>
+                            <p class="content-block__item-text">
+                                Використання передових технологій для автоматизації процесів та
+                                оперативного вирішення завдань.
+                            </p>
+                        </div>
+                        <div class="content-block__item">
+                            <p class="content-block__item-header">
+                                Різноманітні галузі обслуговування
+                            </p>
+                            <p class="content-block__item-text">
+                                Досвід роботи з підприємствами торгівлі, виробництва, надання
+                                послуг, громадського харчування, IT сфери та неприбуткових
+                                організацій.
+                            </p>
+                        </div>
+                        <div class="content-block__item">
+                            <p class="content-block__item-header">Безпека даних</p>
+                            <p class="content-block__item-text">
+                                Гарантована безпека та конфіденційність даних клієнтів, що
+                                особливо важливо для обробки чутливої фінансової інформації.
+                            </p>
+                        </div>
+                        <div class="content-block__item">
+                            <p class="content-block__item-header">
+                                Конкурентно-спроможні тарифи
+                            </p>
+                            <p class="content-block__item-text">
+                                Агенція може запропонувати конкурентоспроможні тарифи та гнучку
+                                систему оплати для своїх клієнтів.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="serve" class="page-section">
+            <div class="breadcrumb-container">
+                <nav class="breadcrumb container" aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="/" class="breadcrumb-link">
+                                <i class="ace-icon fa fa-home home-icon"></i>
+                                Головна
+                            </a>
+                        </li>
+                        <li class="breadcrumb-item active">Послуги</li>
+                    </ol>
+                </nav>
+            </div>
+
+
+            <div class="site-about container lev-font-color">
+                <div class="serve-bg bg-two_notebooks">
+                    <div class="serve-row">
+                        <div class="serve-text-block">
+                            <p class="serve-text__title">Бухгалтерський облік:</p>
+                            <ul>
+                                <li>комплексний бухгалтерський супровід</li>
+                                <li>підготовка всіх фінансових звітів</li>
+                                <li>аудит фінансової звітності та облікових програм</li>
+                            </ul>
+                        </div>
+                        <div class="serve-round-image">
+                            <img src="assets/images/serve/two-notebooks-round.webp" alt="">
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="serve-bg bg-codecs">
+                    <div class="serve-row">
+                        <div class="serve-round-image">
+                            <img src="assets/images/serve/codecs-round.webp" alt="">
+                        </div>
+                        <div class="serve-text-block">
+                            <p class="serve-text__title">Податковий супровід:</p>
+                            <ul>
+                                <li>складання та подання податкової звітності</li>
+                                <li>розблокування податкових накладних</li>
+                                <li>оцінка стану платника податків</li>
+                                <li>оптимізація податкових зобов`язань</li>
+                                <li>супровід податкових перевірок</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="serve-bg bg-notebook">
+                    <div class="serve-row">
+                        <div class="serve-text-block">
+                            <p class="serve-text__title">Кадровий облік:</p>
+                            <ul>
+                                <li>ведення кадрової документації</li>
+                                <li>облік робочого часу</li>
+                                <li>розрахунок заробітної плати</li>
+                                <li>подання звітності</li>
+                            </ul>
+                        </div>
+                        <div class="serve-round-image">
+                            <img src="assets/images/serve/notebook-round.webp" alt="">
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="serve-row">
+                    <span class="serve-text__title">Індивідуальне консультування</span>
+                    <p>
+                        Наші фахівці готові надати індивідуальні консультації,
+                        враховуючи унікальні потреби та особливості вашого бізнесу.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="price" class="page-section">
+            <div class="breadcrumb-container">
+                <nav class="breadcrumb container" aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="/" class="breadcrumb-link">
+                                <i class="ace-icon fa fa-home home-icon"></i>
+                                Головна
+                            </a>
+                        </li>
+                        <li class="breadcrumb-item active">Ціни</li>
+                    </ol>
+                </nav>
+            </div>
+
             <div class="container">
-                <div class="content-block__title">Нас обирають:</div>
-                <div class="content-block choose">
-                    <div class="content-block__item">
-                        <p class="content-block__item-header">
-                            Mалий та середній бізнес (ТОВ, ФОП)
-                        </p>
-                        <p class="content-block__item-text">
-                            Юридичні особи, які прагнуть оптимізувати свою діяльність та
-                            зосередитися на основних завданнях, шукають ефективне та
-                            професійне ведення обліку та кадрового управління за доступними
-                            витратами.
-                        </p>
-                    </div>
-                    <div class="content-block__item">
-                        <p class="content-block__item-header">
-                            Фрілансери та самозайняті особи
-                        </p>
-                        <p class="content-block__item-text">
-                            Фізичні особи - підприємці, які ведуть власний бізнес, і
-                            прагнуть ефективних рішень для свого обліку та оподаткування.
-                        </p>
-                    </div>
-                    <div class="content-block__item">
-                        <p class="content-block__item-header">
-                            Стартапи та нові підприємства
-                        </p>
-                        <p class="content-block__item-text">
-                            Нові компанії, які потребують експертної допомоги в
-                            бухгалтерському та управлінському обліку, але не можуть собі
-                            дозволити великий внутрішній штат спеціалістів.
-                        </p>
-                    </div>
-                    <div class="content-block__item">
-                        <p class="content-block__item-header">
-                            Сектор не комерційних організацій
-                        </p>
-                        <p class="content-block__item-text">
-                            Неприбуткові організації, які не мають прибуткової мети, і
-                            шукають послуги з обліку та фінансового управління
-                        </p>
+                <section class="padd">
+                    <a class="price-card bg-calc" href="#group_1-2">
+                        Для ФО-П на єдиному податку 1-2 група
+                        <span>1</span>
+                    </a>
+                    <a class="price-card bg-calc" href="#group_3">
+                        Для ФО-П на єдиному податку 3 група
+                        <span>2</span>
+                    </a>
+                    <a class="price-card bg-calc" href="#without_tax">
+                        Для юридичних осіб на єдиному податку без ПДВ
+                        <span>3</span>
+                    </a>
+                    <a class="price-card bg-calc" href="#with_tax">
+                        Для юридичних осіб на загальній системі оподпткування з ПДВ
+                        <span>4</span>
+                    </a>
+                    <a class="price-card bg-calc" href="#other_services">
+                        Інші послуги
+                        <span>5</span>
+                    </a>
+
+                </section>
+                <section class="price-section">
+                    <section class="price-category bg-hand" id="group_1-2">
+                        <span>1</span>
+                        <h2 class="price-category__name">Для ФО-П на єдиному податку 1-2 група</h2>
+                        <article class="price-item">
+                            <h3 class="price-item__name">Пакет мінімальний</h3>
+                            <ul class="price-item__check">
+                                <li><i class="fa-solid fa-check"></i>щомісячний контроль сплати податків</li>
+                                <li><i class="fa-solid fa-check"></i>заповнення книги обліку доходів</li>
+                                <li><i class="fa-solid fa-check"></i>подача щорічної звітності</li>
+                                <li><i class="fa-solid fa-check"></i>консультування</li>
+                            </ul>
+                            <p class="cost">від 500 грн</p>
+                        </article>
+                        <article class="price-item">
+                            <h3 class="price-item__name">Пакет стандарт</h3>
+                            <ul class="price-item__check">
+                                <li><i class="fa-solid fa-check"></i>щомісячний контроль сплати податків</li>
+                                <li><i class="fa-solid fa-check"></i>заповнення книги обліку доходів</li>
+                                <li><i class="fa-solid fa-check"></i>подача щорічної звітності</li>
+                                <li><i class="fa-solid fa-check"></i>підготовка та щоквартальна здача 4ДФ</li>
+                                <li><i class="fa-solid fa-check"></i>консультування</li>
+                            </ul>
+                            <p class="cost">900-1200 грн</p>
+                        </article>
+                        <article class="price-item">
+                            <h3 class="price-item__name">Пакет максимальний_1</h3>
+                            <ul class="price-item__check">
+                                <li><i class="fa-solid fa-check"></i>щомісячний контроль сплати податків</li>
+                                <li><i class="fa-solid fa-check"></i>заповнення книги обліку доходів</li>
+                                <li><i class="fa-solid fa-check"></i>подача щорічної звітності</li>
+                                <li><i class="fa-solid fa-check"></i>підготовка та щоквартальна здача 4ДФ</li>
+                                <li><i class="fa-solid fa-check"></i>1 найманий працівник (первинні документи, податки
+                                    та
+                                    звітність)</li>
+                                <li><i class="fa-solid fa-check"></i>консультування</li>
+                            </ul>
+                            <p class="cost">1800-2200 грн</p>
+                        </article>
+                        <article class="price-item">
+                            <h3 class="price-item__name">Пакет максимальний_2</h3>
+                            <ul class="price-item__check">
+                                <li><i class="fa-solid fa-check"></i>щомісячний контроль сплати податків</li>
+                                <li><i class="fa-solid fa-check"></i>заповнення книги обліку доходів</li>
+                                <li><i class="fa-solid fa-check"></i>подача щорічної звітності</li>
+                                <li><i class="fa-solid fa-check"></i>підготовка та щоквартальна здача 4ДФ</li>
+                                <li><i class="fa-solid fa-check"></i>2-4 найманий працівник (первинні документи, податки
+                                    та
+                                    звітність)</li>
+                                <li><i class="fa-solid fa-check"></i>консультування</li>
+                            </ul>
+                            <p class="cost">2000-2600 грн</p>
+                        </article>
+                        <article class="price-item">
+                            <h3 class="price-item__name">Пакет максимальний_3</h3>
+                            <ul class="price-item__check">
+                                <li><i class="fa-solid fa-check"></i>щомісячний контроль сплати податків</li>
+                                <li><i class="fa-solid fa-check"></i>заповнення книги обліку доходів</li>
+                                <li><i class="fa-solid fa-check"></i>подача щорічної звітності</li>
+                                <li><i class="fa-solid fa-check"></i>підготовка та щоквартальна здача 4ДФ</li>
+                                <li><i class="fa-solid fa-check"></i>5-8 найманий працівник (первинні документи, податки
+                                    та
+                                    звітність)</li>
+                                <li><i class="fa-solid fa-check"></i>консультування</li>
+                            </ul>
+                            <p class="cost">2400-3400 грн</p>
+                        </article>
+                    </section>
+
+                    <section class="price-category bg-hand" id="group_3">
+                        <span>2</span>
+                        <h2 class="price-category__name">Для ФО-П на єдиному податку 3 група</h2>
+                        <article class="price-item">
+                            <h3 class="price-item__name">Пакет стандарт</h3>
+                            <ul class="price-item__check">
+                                <li><i class="fa-solid fa-check"></i>щомісячний контроль сплати податків</li>
+                                <li><i class="fa-solid fa-check"></i>заповнення книги обліку доходів</li>
+                                <li><i class="fa-solid fa-check"></i>підготовка та щоквартальна подача звітності</li>
+                                <li><i class="fa-solid fa-check"></i>консультування</li>
+                            </ul>
+                            <p class="cost">1100-1500 грн</p>
+                        </article>
+                        <article class="price-item">
+                            <h3 class="price-item__name">Пакет максимальний_1</h3>
+                            <ul class="price-item__check">
+                                <li><i class="fa-solid fa-check"></i>щомісячний контроль сплати податків</li>
+                                <li><i class="fa-solid fa-check"></i>заповнення книги обліку доходів</li>
+                                <li><i class="fa-solid fa-check"></i>подача щоквартальної звітності</li>
+                                <li><i class="fa-solid fa-check"></i>підготовка та щоквартальна здача 4ДФ</li>
+                                <li><i class="fa-solid fa-check"></i>1 найманий працівник (первинні документи, податки
+                                    та
+                                    звітність)</li>
+                                <li><i class="fa-solid fa-check"></i>консультування</li>
+                            </ul>
+                            <p class="cost">1800-2200 грн</p>
+                        </article>
+                        <article class="price-item">
+                            <h3 class="price-item__name">Пакет максимальний_2</h3>
+                            <ul class="price-item__check">
+                                <li><i class="fa-solid fa-check"></i>щомісячний контроль сплати податків</li>
+                                <li><i class="fa-solid fa-check"></i>заповнення книги обліку доходів</li>
+                                <li><i class="fa-solid fa-check"></i>підготовка та щоквартальна подача звітності</li>
+                                <li><i class="fa-solid fa-check"></i>2-4 найманий працівник (первинні документи, податки
+                                    та
+                                    звітність)</li>
+                                <li><i class="fa-solid fa-check"></i>консультування</li>
+                            </ul>
+                            <p class="cost">2300-2700 грн</p>
+                        </article>
+                        <article class="price-item">
+                            <h3 class="price-item__name">Пакет максимальний_3</h3>
+                            <ul class="price-item__check">
+                                <li><i class="fa-solid fa-check"></i>щомісячний контроль сплати податків</li>
+                                <li><i class="fa-solid fa-check"></i>заповнення книги обліку доходів</li>
+                                <li><i class="fa-solid fa-check"></i>підготовка та щоквартальна здача звітності</li>
+                                <li><i class="fa-solid fa-check"></i>від 5 найманий працівник (первинні документи,
+                                    податки
+                                    та звітність)</li>
+                                <li><i class="fa-solid fa-check"></i>консультування</li>
+                            </ul>
+                            <p class="cost">від 2700 грн</p>
+                        </article>
+                    </section>
+
+                    <section class="price-category bg-hand" id="without_tax">
+                        <span>3</span>
+                        <h2 class="price-category__name">Для юридичних осіб на єдиному податку без ПДВ</h2>
+                        <article class="price-item">
+                            <h3 class="price-item__name">Пакет мінімальний</h3>
+                            <ul class="price-item__check">
+                                <li><i class="fa-solid fa-check"></i>до 20 операцій на міцсяць</li>
+                                <li><i class="fa-solid fa-check"></i> до 2 співробітників
+                                </li>
+                            </ul>
+                            <p class="cost">від 3500 грн</p>
+                        </article>
+                        <article class="price-item">
+                            <h3 class="price-item__name">Пакет максимальний</h3>
+                            <ul class="price-item__check">
+                                <li><i class="fa-solid fa-check"></i>більше 20 операцій на міцсяць</li>
+                                <li><i class="fa-solid fa-check"></i>більше 2 співробітників</li>
+                                <i>Можливе додаткове подання звітності:</i>
+                                <li>• по військовому обліку</li>
+                                <li>• по податку (оренді) на землю та нерухомість</li>
+                                <li>• по рентній платі</li>
+                                <li>• по екологічному податку</li>
+                                <li>• в статистику</li>
+                            </ul>
+                            <p class="cost">ціна розраховується індивідуально</p>
+                        </article>
+                    </section>
+                    <section class="price-category bg-hand" id="with_tax">
+                        <span>4</span>
+                        <h2 class="price-category__name">Для юридичних осіб на загальній системі оподаткування з ПДВ
+                        </h2>
+                        <article class="price-item">
+                            <h3 class="price-item__name">Пакет мінімальний</h3>
+                            <ul class="price-item__check">
+                                <li><i class="fa-solid fa-check"></i>до 10 операцій на міцсяць</li>
+                                <li><i class="fa-solid fa-check"></i>до 2 співробітників</li>
+                            </ul>
+                            <p class="cost">від 5000 грн</p>
+                        </article>
+                        <article class="price-item">
+                            <h3 class="price-item__name">Пакет стандарт</h3>
+                            <ul class="price-item__check">
+                                <li><i class="fa-solid fa-check"></i>до 30 операцій на міцсяць</li>
+                                <li><i class="fa-solid fa-check"></i>до 5 співробітників</li>
+                            </ul>
+                            <p class="cost">від 10000 грн</p>
+                        </article>
+                        <article class="price-item">
+                            <h3 class="price-item__name">Пакет максимальний</h3>
+                            <ul class="price-item__check">
+                                <li><i class="fa-solid fa-check"></i>більше 30 операцій на міцсяць</li>
+                                <li><i class="fa-solid fa-check"></i>більше 5 співробітників</li>
+                                <i>Можливе додаткове подання звітності:</i>
+                                <li>• по військовому обліку</li>
+                                <li>• по податку (оренді) на землю та нерухомість</li>
+                                <li>• по рентній платі</li>
+                                <li>• по екологічному податку</li>
+                                <li>• в статистику</li>
+                            </ul>
+                            <p class="cost">ціна розраховується індивідуально</p>
+                        </article>
+                    </section>
+                    <section class="price-category bg-hand" id="other_services">
+                        <span>5</span>
+                        <h2 class="price-category__name">Інші послуги</h2>
+                        <div class="others">
+                            <article class="price-item">
+                                <h3 class="price-item__name">Відкриття ФОП</h3>
+                                <p class="cost">1500-2000 грн</p>
+                            </article>
+                            <article class="price-item">
+                                <h3 class="price-item__name">Підключення ПРРО</h3>
+                                <p class="cost">800-2000 грн</p>
+                            </article>
+                            <article class="price-item">
+                                <h3 class=" price-item__name">Здача річної звітності ФОП на єдиному податку 1 група</h3>
+                                <p class="cost">500 грн</p>
+                            </article>
+                            <article class="price-item">
+                                <h3 class="price-item__name">Здача річної звітності ФОП на єдиному податку 1 група с
+                                    заповненням книги</h3>
+                                <p class="cost">1000 грн</p>
+                            </article>
+                            <article class="price-item">
+                                <h3 class="price-item__name">Здача річної звітності ФОП на єдиному податку 2 група</h3>
+                                <p class="cost">700 грн</p>
+                            </article>
+                            <article class="price-item">
+                                <h3 class="price-item__name">Здача річної звітності ФОП на єдиному податку 2 група с
+                                    заповненням книги</h3>
+                                <p class="cost">1500 грн</p>
+                            </article>
+                            <article class="price-item">
+                                <h3 class="price-item__name">Здача квартальної звітності ФОП на єдиному податку 3 група
+                                </h3>
+                                <p class="cost">700 грн</p>
+                            </article>
+                            <article class="price-item">
+                                <h3 class="price-item__name">Кадровий облік</h3>
+                                <p class="cost">800 грн за 1 працівник + 400 грн за кожного наступного</p>
+                            </article>
+                        </div>
+                    </section>
+                </section>
+
+            </div>
+
+        </section>
+
+        <section id="contact" class="page-section">
+            <div class="breadcrumb-container">
+                <nav class="breadcrumb container" aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="/" class="breadcrumb-link">
+                                <i class="ace-icon fa fa-home home-icon"></i>
+                                Головна
+                            </a>
+                        </li>
+                        <li class="breadcrumb-item active">Контакти</li>
+                    </ol>
+                </nav>
+            </div>
+
+            <div class="site-contact lev-font-color container">
+                <div class="contact-row">
+                    <h3>Контакти</h3>
+                    <a class="phone lev-color td" href="tel:+380986073304">
+                        <i class="fa-solid fa-phone-volume"></i>
+                        +38 (098) 607-33-04
+                    </a>
+                    <a class="mail lev-color td" href="mailto:lev.buh.agency@gmail.com">
+                        <i class="fa-solid fa-envelope"></i>
+                        lev.buh.agency@gmail.com
+                    </a>
+                    <div class="social-icons-block">
+                        <a rel="noopener noreferrer" target="_blank" href="https://t.me/lev_buh"
+                            class="social-icons-link">
+                            <i class="fa-brands fa-telegram lev-color"></i>
+                        </a>
+                        <a rel="noopener noreferrer" target="_blank" href="viber://chat?number=+380986073304"
+                            class="social-icons-link">
+                            <i class="fa-brands fa-viber lev-color"></i>
+                        </a>
+                        <a rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/lev.buh.agency"
+                            class="social-icons-link">
+                            <i class="fa-brands fa-instagram lev-color"></i>
+                        </a>
+                        <a rel="noopener noreferrer" target="_blank"
+                            href="https://www.facebook.com/profile.php?id=61557095614231" class="social-icons-link">
+                            <i class="fa-brands fa-facebook lev-color"></i>
+                        </a>
                     </div>
                 </div>
 
-                <div class="content-block__title">
-                    Бухгалтерська агенція "ЛЕВ" - це:
-                </div>
-                <div class="content-block cw">
-                    <div class="content-block__item">
-                        <p class="content-block__item-header">
-                            Глибокий досвід та професіоналізм
-                        </p>
-                        <p class="content-block__item-text">
-                            Провідні бухгалтери агенції мають досвід роботи понад 16 років
-                            та гарантують високу експертизу й точність у веденні обліку для
-                            різних галузей.
-                        </p>
+                <div class="contact-row">
+
+                    <div class="contact-column">
+                        <h3>
+                            Запис на консультацію: </h3>
+                        <form id="contact-form" action="#" method="get">
+                            <div class="form-group field-contactform-name required">
+                                <label class="control-label" for="contactform-name">Ім'я</label>
+                                <input type="text" id="contactform-name" class="form-control" name="ContactForm[name]"
+                                    autofocus="" aria-required="true" aria-invalid="true">
+
+                                <p class="help-block help-block-error"></p>
+                            </div>
+                            <div class="form-group field-contactform-email required">
+                                <label class="control-label" for="contactform-email">Email</label>
+                                <input type="text" id="contactform-email" class="form-control" name="ContactForm[email]"
+                                    aria-required="true" placeholder="example@domain.com" />
+                                <!-- Добавлен плейсхолдер -->
+
+                                <p class="help-block help-block-error"></p>
+                            </div>
+                            <div class="form-group field-contactform-phone required">
+                                <label class="control-label" for="contactform-phone">Номер телефону</label>
+                                <input type="text" id="contactform-phone" class="form-control" name="ContactForm[phone]"
+                                    aria-required="true" placeholder="+38 (012) 345-67-89" />
+                                <!-- Добавлен плейсхолдер -->
+                                <p class="help-block help-block-error"></p>
+                            </div>
+                            <div class="form-group field-contactform-question required">
+                                <label class="control-label" for="contactform-question">Коротке питання</label>
+                                <input type="text" id="contactform-question" class="form-control"
+                                    name="ContactForm[question]" aria-required="true">
+
+                                <p class="help-block help-block-error"></p>
+                            </div>
+                            <div class="form-group consulting-submit-button">
+                                <button type="submit" class="btn btn-success lev-bg"
+                                    name="contact-button">Надіслати</button>
+                            </div>
+                        </form>
                     </div>
-                    <div class="content-block__item">
-                        <p class="content-block__item-header">Широкий спектр послуг</p>
-                        <p class="content-block__item-text">
-                            Комплексне обслуговування з бухгалтерського, податкового,
-                            управлінського та кадрового обліку для різних видів підприємств.
-                        </p>
-                    </div>
-                    <div class="content-block__item">
-                        <p class="content-block__item-header">Онлайн обслуговування</p>
-                        <p class="content-block__item-text">
-                            Надання послуг як в офісі, так і онлайн, що забезпечує
-                            максимальну зручність та доступність для клієнтів.
-                        </p>
-                    </div>
-                    <div class="content-block__item">
-                        <p class="content-block__item-header">Індивідуальний підхід</p>
-                        <p class="content-block__item-text">
-                            Орієнтація на потреби клієнтів різних галузей, забезпечуючи
-                            персоналізовані рішення та консультації.
-                        </p>
-                    </div>
-                    <div class="content-block__item">
-                        <p class="content-block__item-header">
-                            Висока ефективність та швидкість
-                        </p>
-                        <p class="content-block__item-text">
-                            Використання передових технологій для автоматизації процесів та
-                            оперативного вирішення завдань.
-                        </p>
-                    </div>
-                    <div class="content-block__item">
-                        <p class="content-block__item-header">
-                            Різноманітні галузі обслуговування
-                        </p>
-                        <p class="content-block__item-text">
-                            Досвід роботи з підприємствами торгівлі, виробництва, надання
-                            послуг, громадського харчування, IT сфери та неприбуткових
-                            організацій.
-                        </p>
-                    </div>
-                    <div class="content-block__item">
-                        <p class="content-block__item-header">Безпека даних</p>
-                        <p class="content-block__item-text">
-                            Гарантована безпека та конфіденційність даних клієнтів, що
-                            особливо важливо для обробки чутливої фінансової інформації.
-                        </p>
-                    </div>
-                    <div class="content-block__item">
-                        <p class="content-block__item-header">
-                            Конкурентно-спроможні тарифи
-                        </p>
-                        <p class="content-block__item-text">
-                            Агенція може запропонувати конкурентоспроможні тарифи та гнучку
-                            систему оплати для своїх клієнтів.
-                        </p>
+
+                    <div class="contact-column">
+                        <h3>Адреса:</h3>
+                        <p>Харківська обл., смт Пісочин (с.Надточії), вул.Дачна 39</p>
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1283.0783815596037!2d36.07347663829013!3d49.97091863501656!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x41279fa6b9d47351%3A0x2fb47a934820d0d8!2z0JHRg9GF0LPQsNC70YLQtdGA0YHRjNC60LAg0LDQs9C10L3RhtGW0Y8gItCb0JXQkiI!5e0!3m2!1sru!2sua!4v1709484849995!5m2!1sru!2sua"
+                            width="600" height="350" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
+
         <div class="up-button__wrapper">
             <a href="" class="up-button">
                 <svg width="29" height="29" viewBox="0 0 50 29" fill="none">
@@ -319,7 +774,6 @@
         </div>
     </footer>
 
-    <!-- <script src="assets/js/bootstrap.js"></script> -->
     <script src="assets/js/main.js"></script>
 </body>
 
